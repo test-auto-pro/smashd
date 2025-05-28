@@ -1,6 +1,6 @@
 # 🔁 Social Media Automation System Help Documentation
 
-This repository contains an Social Media Content Distribution Automation System for posting visual content to **9 social media platforms** using [Blotato](https://blotato.com) and [n8n](https://n8n.io).
+This repository contains a **S**ocial **M**edia **A**utomation **S**ystem for posting visual content to **9 social media platforms** via [Blotato API](https://blotato.com/?ref=aiacntnt)) and [n8n](https://n8n.io).
 
 ---
 
