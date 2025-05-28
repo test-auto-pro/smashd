@@ -1,6 +1,9 @@
 # 🔁 Social Media Automation System Help Documentation
 
-This repository contains a **S**ocial **M**edia **A**utomation **S**ystem for posting visual content to **9 social media platforms** via [Blotato API](https://blotato.com/?ref=aiacntnt)) and [n8n](https://n8n.io).
+This repository contains a **S**ocial **M**edia **A**utomation **S**ystem for posting visual content to **9 social media platforms** via [Blotato API](https://blotato.com/?ref=aiacntnt) and [n8n](https://n8n.io).
+
+- **n8n** is an open-source workflow automation tool that lets you build automated processes with no/low coding skills.
+- **Blotato** is an AI-powered content creation and distribution platform designed to streamline the process of producing high-quality, consistent content across multiple social media platforms
 
 ---
 
@@ -39,7 +42,7 @@ This repo (or downloadable zip folder) contains:
 | **Google Sheets**  | Free                | Used to manage post data and status tracking           |
 | **Apps Script**    | Free                | Embedded in the Google Sheet to automate detection     |
 | **Blotato**        | **Paid**            | Social media API abstraction layer                     |
-| **n8n**            | Free Trial / Free   | 14-day Cloud trial or Self-hosted (free)               |
+| **n8n**            | Free Trial / Free   | 14-day Cloud trial or Local Installation (free)               |
 | **Canva** *(optional)* | Free/Paid     | Used to create faceless video templates                |
 
 > 📌 Note: n8n Cloud offers 14-day free trial. Self-hosted version is free — setup guide coming soon.
@@ -55,8 +58,8 @@ This repo (or downloadable zip folder) contains:
 
 ```
 /My Drive/Video/
-├── sample-video-1.mp4
-├── sample-video-2.mp4
+├── CanvaVideo01.mp4
+├── CanvaVideo022.mp4
 ├── ...
 └── Publish to 9 Social Platforms (Google Sheet)
 ```
