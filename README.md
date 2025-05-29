@@ -83,11 +83,12 @@ IMPORTANT! Do not skip this step
 ### 3. **Open the Google Sheet**
 
 - File: `Publish to 9 Social Platforms`
-- Tabs:
+- Tabs/Sheets:
   - `Settings` — contains Description and functionality to populate the sheet on demand via a "Run Now" button or schedule the auto population.
-  - `ContentData` — where the script will populate file data
-  - `ContentData` sheet can be populated manually. 
-  -  `Metadata` — populate manually for titles and captions to be randomly selected, see ContentData first row example, Title and Caption columns contain formula to get random values from Metadata 
+  - `ContentData` sheet — where the script will populate file data
+  - `ContentData` sheet can be populated manually.
+  - Before running the n8n workflow make sure at least one row in ContentData sheet is set to 'Ready to Post' in the Status column
+  -  `Metadata`sheet  — populate manually for titles and captions to be randomly selected, see ContentData first row example, Title and Caption columns contain formula to get random values from Metadata sheet
 
 ---
 
@@ -125,14 +126,18 @@ IMPORTANT! Do not skip this step
 - Open your n8n instance (cloud or self-hosted)
 - Import `publish_9_social_platforms_n8n_byTAP.json`
 - Configure:
-  - Google Sheets connection to 'Publish to 9 Social Platforms'
-  - Set the filter on 'Status' Column for 'Ready to Post' value. 
+  - Google Sheets connection 1 to 'Publish to 9 Social Platforms' Google Sheet
+        - Set the filter on 'Status' Column for 'Ready to Post' value. 
   - Blotato API Key and account IDs
-  - OpenAI key (optional, for title generation)
+- Google Sheets connection 2 Update to 'Publish to 9 Social Platforms' Google Sheet
+        - Set the filter on 'Video URL' Column for video url value.
 
 ---
-
-### 7. **Distribute Content**
+### 7. **Test the Set Up**
+- Test each node first 
+- Each time the workflow is executed 
+---
+### 8. **Distribute Content**
 
 - Run the workflow manually or via a schedule
 - Each run:
