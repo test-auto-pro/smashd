@@ -42,7 +42,7 @@ This repo (or downloadable zip folder) contains:
 | **Apps Script**    | Free                | Embedded in the Google Sheet to automate detection     |
 | **Blotato**        | **Paid**            | Social media API abstraction layer                     |
 | **n8n**            | Free Trial / Free   | 14-day Cloud trial or Local Installation (free)               |
-| **Canva** *(optional)* | Free/Paid     | Used to create faceless video templates                |
+| **Canva** *(optional)* | Free/Paid     | Used to create faceless videos               |
 
 > 📌 Note: n8n Cloud offers 14-day free trial. Self-hosted version is free — setup guide coming soon.
 
@@ -55,7 +55,7 @@ This repo (or downloadable zip folder) contains:
 - Download the zip file from this repo
 - Extract the contents to your Google Drive, 'Video' folder. 
 
- under the following structure:
+ Sample structure:
 
 ```
 /My Drive/Video/
@@ -76,7 +76,7 @@ IMPORTANT! Do not skip this step
 - Set sharing to:
   - “Anyone with the link”
   - Viewer access is sufficient
-- This allows Apps Script to generate valid public File URLs
+- This allows Apps Script to generate **valid public File URLs**
 
 ---
 
@@ -87,6 +87,7 @@ IMPORTANT! Do not skip this step
   - `Settings` — contains Description and functionality to populate the sheet on demand via a "Run Now" button or schedule the auto population.
   - `ContentData` — where the script will populate file data
   - `ContentData` sheet can be populated manually. 
+  -  `Metadata` — populate manually for titles and captions to be randomly selected, see ContentData first row example, Title and Caption columns contain formula to get random values from Metadata 
 
 ---
 
@@ -104,7 +105,9 @@ IMPORTANT! Do not skip this step
       - Status = "In Progress"
 - Captions, titles, and hashtags can be edited manually before publishing
 
-- Accept the security warning during the Script execution.
+- The First run: Open Apps Script  Window> Extension Apps Script > Run Button
+
+ - Accept the security warning during the Script execution.
 
 ---
 
@@ -142,15 +145,16 @@ IMPORTANT! Do not skip this step
 
 ## 📌 Notes
 
-- Currently supports one post at a time (one file per run)
+- Built to maximize efficiency and minimize cost. 
+- Supports one post at a time (one file/data row per run)
+- Supports scheduling via n8n, i.e. post every 8 hours (3 times a day)
 - Each platform is independently optional — if a node is disabled, it's skipped
-- The workflow was designed to be duplicated and sold as a **packaged automation system**
 
 ---
 
 ## 🛠 Roadmap
 
-- Add OpenAI integration to generate titles from captions
+- Add OpenAI integration to generate titles, captions, hashtags for specified niche
 - Add auto-caption generation based on video/audio analysis
 - Add retry logic and error logging
 - Build out template versions for:
