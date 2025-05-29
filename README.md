@@ -6,20 +6,19 @@ This repository contains a **S**ocial **M**edia **A**utomation **S**ystem for po
 - **Blotato** is an AI-powered content creation and distribution platform designed to streamline the process of producing high-quality, consistent content across multiple social media platforms
 
 ---
-
-## 🚀 Purpose
+## 🚀 Description 
 
 This system automates the process of publishing visual content across multiple social media platforms.
 
 It performs the following:
 
 - Detects new content (videos, images) added to a specific Google Drive folder
-- Logs the content details into a Google Sheet
-- Uses the n8n automation platform to post that content to up to 9 platforms via the Blotato API
+- Logs the content details into a Google Sheet, on demand or scheduled 
+- Uses the n8n automation platform to distribute the content to up to 9 platforms via the Blotato API
 - Tracks which platforms each piece of content was published to in the same sheet
 ---
 
-## 📦 What's Included
+## 📦 What's included
 
 This repo (or downloadable zip folder) contains:
 
@@ -54,12 +53,14 @@ This repo (or downloadable zip folder) contains:
 ### 1. **Download the Project Files**
 
 - Download the zip file from this repo
-- Extract the contents to your Google Drive under the following structure:
+- Extract the contents to your Google Drive, 'Video' folder. 
+
+ under the following structure:
 
 ```
 /My Drive/Video/
 ├── CanvaVideo01.mp4
-├── CanvaVideo022.mp4
+├── CanvaVideo02.mp4
 ├── ...
 └── Publish to 9 Social Platforms (Google Sheet)
 ```
@@ -67,7 +68,9 @@ This repo (or downloadable zip folder) contains:
 ---
 
 ### 2. **Share the Video Folder**
-
+```
+IMPORTANT! Do not skip this step
+```
 - Open your `/Video` folder in Google Drive
 - Right-click and choose **“Share”**
 - Set sharing to:
@@ -81,8 +84,9 @@ This repo (or downloadable zip folder) contains:
 
 - File: `Publish to 9 Social Platforms`
 - Tabs:
-  - `Settings` — contains a "Run Now" button
-  - `ContentData` — where the automation will populate file data
+  - `Settings` — contains Description and functionality to populate the sheet on demand via a "Run Now" button or schedule the auto population.
+  - `ContentData` — where the script will populate file data
+  - `ContentData` sheet can be populated manually. 
 
 ---
 
@@ -100,11 +104,13 @@ This repo (or downloadable zip folder) contains:
       - Status = "In Progress"
 - Captions, titles, and hashtags can be edited manually before publishing
 
+- Accept the security warning during the Script execution.
+
 ---
 
 ### 5. **Set Up Blotato and Get API Keys**
 
-- Create an account at [blotato.com](https://blotato.com) (Paid)
+- Create an account at [blotato.com](https://blotato.com/?ref=aiacntnt) (Paid)
 - Connect your social media accounts
 - Copy your API key and each platform’s Account ID
 - These are entered once in the **Settings node** inside n8n
@@ -116,7 +122,8 @@ This repo (or downloadable zip folder) contains:
 - Open your n8n instance (cloud or self-hosted)
 - Import `publish_9_social_platforms_n8n_byTAP.json`
 - Configure:
-  - Google Sheets credentials
+  - Google Sheets connection to 'Publish to 9 Social Platforms'
+  - Set the filter on 'Status' Column for 'Ready to Post' value. 
   - Blotato API Key and account IDs
   - OpenAI key (optional, for title generation)
 
@@ -127,8 +134,8 @@ This repo (or downloadable zip folder) contains:
 - Run the workflow manually or via a schedule
 - Each run:
   - Pulls the next `"Ready to Post"` row from `ContentData`
-  - Posts to all enabled social networks
-  - Updates each network's column with `"Posted on [timestamp]"`
+  - Posts to all enabled social networks (Corresponding n8n node is active)
+  - Updates Google sheet for each network's column with `"Posted on [timestamp]"`
   - Marks the `Status` column as `"Posted"`
 
 ---
