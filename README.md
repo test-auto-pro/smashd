@@ -23,13 +23,13 @@ It performs the following:
 This repo (or downloadable zip folder) contains:
 
 - `Video/` folder:
-  - 10 sample videos for testing
+  - 10 sample videos
   - A Google Sheet: `Publish to 9 Social Platforms`  
     - Contains:
       - `Settings` tab — for running Apps Script manually
       - `ContentData` tab — where file data is populated and tracked
 - `apps_script.gs` — Apps Script for pulling file metadata into the sheet
-- `publish_9_social_platforms_n8n_byTAP.json` — the complete, production-ready n8n workflow template
+- `publish_9_social_platforms_n8n_byTAP.json` — n8n workflow template
 
 ---
 
@@ -87,7 +87,7 @@ IMPORTANT! Do not skip this step
   - `Settings` — contains Description and functionality to populate the sheet on demand via a "Run Now" button or schedule the auto population.
   - `ContentData` sheet — where the script will populate file data
   - `ContentData` sheet can be populated manually.
-  - Before running the n8n workflow make sure at least one row in ContentData sheet is set to 'Ready to Post' in the Status column
+        - Before running the n8n workflow make sure at least one row in ContentData sheet is set to 'Ready to Post' in the Status column
   -  `Metadata`sheet  — populate manually for titles and captions to be randomly selected, see ContentData first row example, Title and Caption columns contain formula to get random values from Metadata sheet
 
 ---
