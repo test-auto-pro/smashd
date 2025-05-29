@@ -169,8 +169,9 @@ IMPORTANT! Do not skip this step
 - **n8n** – low-code automation platform
 - **Blotato** – unified social media posting API
 - **Google Drive / Sheets** – file system + structured content source
-- **Canva** – to generate faceless, scroll-stopping video content
+- **Canva** – to generate faceless, video content
 
 ---
 
 Created by [TestAutomationPro](https://www.instagram.com/test.automation.pro/) — automating the automation, so creators can focus on what matters.
+👉 Don't do it a̶g̶a̶i̶n̶. Automate! 🚀
