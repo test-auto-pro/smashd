@@ -16,20 +16,6 @@ It performs the following:
 - Logs the content details into a Google Sheet, on demand or scheduled 
 - Uses the n8n automation platform to distribute the content to up to 9 platforms via the Blotato API
 - Tracks which platforms each piece of content was published to in the same sheet
----
-
-## 📦 What's included
-
-This repo (or downloadable zip folder) contains:
-
-- `Video/` folder:
-  - 10 sample videos
-  - A Google Sheet: `Publish to 9 Social Platforms`  
-    - Contains:
-      - `Settings` tab — for running Apps Script manually
-      - `ContentData` tab — where file data is populated and tracked
-- `apps_script.gs` — Apps Script for pulling file metadata into the sheet
-- `publish_9_social_platforms_n8n_byTAP.json` — n8n workflow template
 
 ---
 
@@ -41,10 +27,10 @@ This repo (or downloadable zip folder) contains:
 | **Google Sheets**  | Free                | Used to manage post data and status tracking           |
 | **Apps Script**    | Free                | Embedded in the Google Sheet to automate detection     |
 | **Blotato**        | **Paid**            | Social media API abstraction layer                     |
-| **n8n**            | Free Trial / Free   | 14-day Cloud trial or Local Installation (free)               |
+| **n8n**            | Free Trial / Free   | 14-day Cloud trial or [FREE Local n8n Installation](local_n8n.md)              |
 | **Canva** *(optional)* | Free/Paid     | Used to create faceless videos               |
 
-> 📌 Note: n8n Cloud offers 14-day free trial. Self-hosted version is free — setup guide coming soon.
+> 📌 Note: n8n Cloud offers 14-day free trial. Self-hosted version is free — see setup guide.
 
 ---
 
