@@ -15,7 +15,7 @@ It performs the following:
 - Detects new content (videos, images) added to a specific Google Drive folder
 - Logs the content details into a Google Sheet, on demand or scheduled 
 - Uses the n8n automation platform to distribute the content to up to 9 platforms via the Blotato API
-- Tracks which platforms each piece of content was published to in the same sheet
+- Tracks which platforms each piece of content was published to and when it was published in the same sheet
 
 ---
 
@@ -30,7 +30,7 @@ It performs the following:
 | **n8n**            | Free Trial / Free   | 14-day Cloud trial or [FREE Local n8n Installation](local_n8n.md)              |
 | **Canva** *(optional)* | Free/Paid     | Used to create faceless videos               |
 
-> 📌 Note: n8n Cloud offers 14-day free trial. Self-hosted version is free — see setup guide.
+> 📌 Note: n8n Cloud offers 14-day free trial. Self-hosted version is free — see local setup guide.
 
 ---
 
