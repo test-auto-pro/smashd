@@ -25,7 +25,7 @@ It performs the following:
 |--------------------|---------------------|---------------------------------------------------------|
 | **Google Drive**   | Free                | Stores videos and drives the content pipeline          |
 | **Google Sheets**  | Free                | Used to manage post data and status tracking           |
-| **Apps Script**    | Free                | Embedded in the Google Sheet to automate detection     |
+| **Apps Script**    | Free                | Embedded in the Google Sheet to automate new content detection     |
 | **Blotato**        | **Paid**            | Social media API abstraction layer                     |
 | **n8n**            | Free Trial / Free   | 14-day Cloud trial or [FREE Local n8n Installation](local_n8n.md)              |
 | **Canva** *(optional)* | Free/Paid     | Used to create faceless videos               |
@@ -39,7 +39,7 @@ It performs the following:
 ### 1. **Download the Project Files**
 
 - Download the zip file from this repo
-- Extract the contents to your Google Drive, 'Video' folder. 
+- Extract the contents to your Google Drive, **'Video'** folder. 
 
  Sample structure:
 
@@ -47,8 +47,9 @@ It performs the following:
 /My Drive/Video/
 ├── CanvaVideo01.mp4
 ├── CanvaVideo02.mp4
-├── ...
+├── publish_9_social_platforms_n8n_byTAP.json
 └── Publish to 9 Social Platforms (Google Sheet)
+
 ```
 
 ---
@@ -57,7 +58,7 @@ It performs the following:
 ```
 IMPORTANT! Do not skip this step
 ```
-- Open your `/Video` folder in Google Drive
+- Open your `/Video` folder in Google Drive in the browser
 - Right-click and choose **“Share”**
 - Set sharing to:
   - “Anyone with the link”
@@ -109,14 +110,20 @@ IMPORTANT! Do not skip this step
 
 ### 6. **Import the n8n Workflow**
 
-- Open your n8n instance (cloud or self-hosted)
-- Import `publish_9_social_platforms_n8n_byTAP.json`
-- Configure:
-  - Google Sheets connection 1 to 'Publish to 9 Social Platforms' Google Sheet
-        - Set the filter on 'Status' Column for 'Ready to Post' value. 
-  - Blotato API Key and account IDs
-- Google Sheets connection 2 Update to 'Publish to 9 Social Platforms' Google Sheet
-        - Set the filter on 'Video URL' Column for video url value.
+* Register an account with n8n and get a 14-day free trial
+  *(later you can set up your own free local instance if preferred)*
+* Open your n8n instance (cloud or local)
+* Import `publish_9_social_platforms_n8n_byTAP.json`
+* Configure:
+
+  * **Google Sheets connection 1 - Google Sheets NODE**: Connect to the 'Publish to 9 Social Platforms' Google Sheet
+
+    * This is the first node — it reads data where the **Status** column equals **Ready to Post**
+  * **Setup Social Accounts NODE**: Add your Blotato API key and account IDs
+  * **Google Sheets connection 2 - Update Network Status NODE**: Connect to the same sheet
+
+    * This is the final node — it updates the sheet by setting the **Status** and **Date Posted** for rows matching the **Video URL*
+
 
 ---
 ### 7. **Test the Set Up**
