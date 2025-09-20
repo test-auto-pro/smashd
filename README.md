@@ -25,7 +25,7 @@ It performs the following:
 |--------------------|---------------------|---------------------------------------------------------|
 | **Google Drive**   | Free                | Stores videos and drives the content pipeline          |
 | **Google Sheets**  | Free                | Used to manage post data and status tracking           |
-| **Apps Script**    | Free                | Embedded in the Google Sheet to automate new content detection     |
+| **OpenAI**         | **Paid**            | Used in n8n workflow for multi-platform titles/caption generation     |
 | **Blotato**        | **Paid**            | Social media API abstraction layer                     |
 | **n8n**            | Free Trial / Free   | 14-day Cloud trial or [FREE Local n8n Installation](local_n8n.md)              |
 
@@ -47,7 +47,7 @@ It performs the following:
 /My Drive/MyContnet/
 ├── /DEMO (5 VIDEOS)
 ├── /PROCESS (5 VIDEOS)
-├── N8N_PUBLISH_TO_9_PLATFORMS_PRO.json (N8N WORKFLOW
+├── N8N_PUBLISH_TO_9_PLATFORMS_PRO.json (N8N WORKFLOW)
 └── GOOGLE_SHEET_PUBLISH_TO_9_PLATFORMS_PRO (Google Sheet)
 
 ```
@@ -58,7 +58,7 @@ It performs the following:
 ```
 IMPORTANT! Do not skip this step
 ```
-- Open your `/Video` folder in Google Drive in the browser
+- Open your `/MyContent` folder in Google Drive in the browser
 - Right-click and choose **“Share”**
 - Set sharing to:
   - “Anyone with the link”
@@ -84,7 +84,7 @@ IMPORTANT! Do not skip this step
 - Open the **Settings** tab
 - Click the `Run Now` button to trigger the Apps Script
   - This will:
-    - Scan the `/Video` folder
+    - Scan the `/MyContent` folder
     - Detect all new files of these types: `.mp4`, `.mov`, `.avi`, `.png`, `.jpg`, `.jpeg`, `.gif`
     - Populate the `ContentData` sheet with:
       - Filename
@@ -96,24 +96,22 @@ IMPORTANT! Do not skip this step
 - The First run: Open Apps Script  Window> Extension Apps Script > Run Button
 
  - Accept the security warning during the Script execution.
-
+> 📌 Note: The script only reads data from your MyContent folder and is safe to run. If  you have any security concerns, copy paste the script to chatGPT and ask to analyse it for any security risks.
 ---
 
 ### 5. **Set Up Blotato and Get API Keys**
 
-- Create an account at [blotato.com](https://blotato.com/?ref=aiacntnt) (Paid)
+- Create an account at [blotato.com](https://blotato.com/?ref=aiacntnt) (<- Get a free trial week with this affiliate link)
 - Connect your social media accounts
-- Copy your API key and each platform’s Account ID
-- These are entered once in the **Settings node** inside n8n
 
 ---
 
 ### 6. **Import the n8n Workflow**
 
 * Register an account with n8n and get a 14-day free trial
-  *(later you can set up your own free local instance if preferred)*
+  *(later you can set up your own free local instance if preferred, see n8n Local Instance Setup Guide)*
 * Open your n8n instance (cloud or local)
-* Import `publish_9_social_platforms_n8n_byTAP.json`
+* Import `N8N_PUBLISH_TO_9_PLATFORMS_PRO.json`
 * Configure:
 
   * **Google Sheets connection 1 - Google Sheets NODE**: Connect to the 'Publish to 9 Social Platforms' Google Sheet
