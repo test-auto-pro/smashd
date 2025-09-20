@@ -1,6 +1,6 @@
 # 🔁 Social Media Automation System Help Documentation
 
-This repository contains a **S**ocial **M**edia **A**utomation **S**ystem for posting visual content to **9 social media platforms** via [Blotato API](https://blotato.com/?ref=aiacntnt) and [n8n](https://n8n.io).
+This repository contains a **S**ocial **M**edia **A**utomation **S**ystem for posting your original visual content to **9 social media platforms** via [Blotato API](https://blotato.com/?ref=aiacntnt) and [n8n](https://n8n.io).
 
 - **n8n** is an open-source workflow automation tool that lets you build automated processes with no/low coding skills.
 - **Blotato** is an AI-powered content creation and distribution platform designed to streamline the process of producing high-quality, consistent content across multiple social media platforms
@@ -8,12 +8,12 @@ This repository contains a **S**ocial **M**edia **A**utomation **S**ystem for po
 ---
 ## 🚀 Description 
 
-This system automates the process of publishing visual content across multiple social media platforms.
+This system automates the process of publishing original visual content across multiple social media platforms.
 
 It performs the following:
 
-- Detects new content (videos, images) added to a specific Google Drive folder
-- Logs the content details into a Google Sheet, on demand or scheduled 
+- Detects new media files (videos, images) added to a specific Google Drive folder (uploaded by you via your phone or pc)
+- Populates the media file details into a Google Sheet, on demand or scheduled 
 - Uses the n8n automation platform to distribute the content to up to 9 platforms via the Blotato API
 - Tracks which platforms each piece of content was published to and when it was published in the same sheet
 
@@ -28,7 +28,6 @@ It performs the following:
 | **Apps Script**    | Free                | Embedded in the Google Sheet to automate new content detection     |
 | **Blotato**        | **Paid**            | Social media API abstraction layer                     |
 | **n8n**            | Free Trial / Free   | 14-day Cloud trial or [FREE Local n8n Installation](local_n8n.md)              |
-| **Canva** *(optional)* | Free/Paid     | Used to create faceless videos               |
 
 > 📌 Note: n8n Cloud offers 14-day free trial. Self-hosted version is free — see local setup guide.
 
@@ -38,17 +37,18 @@ It performs the following:
 
 ### 1. **Download the Project Files**
 
-- Download the zip file from this repo
-- Extract the contents to your Google Drive, **'Video'** folder. 
+- Download the files [LINK TO GOOGLE DRIVE]
+- Extract the contents to your Google Drive, **'MyContent'** folder.
+- > 📌 Note: it is recommended first to recreate the same file/folder structure and follow suggested naming conventions. Once everything is configured and works you can start tweaking the system to match your business/niche/brand
 
- Sample structure:
+ ## Google Drive folder/file structure:
 
 ```
-/My Drive/Video/
-├── CanvaVideo01.mp4
-├── CanvaVideo02.mp4
-├── publish_9_social_platforms_n8n_byTAP.json
-└── Publish to 9 Social Platforms (Google Sheet)
+/My Drive/MyContnet/
+├── /DEMO (5 VIDEOS)
+├── /PROCESS (5 VIDEOS)
+├── N8N_PUBLISH_TO_9_PLATFORMS_PRO.json (N8N WORKFLOW
+└── GOOGLE_SHEET_PUBLISH_TO_9_PLATFORMS_PRO (Google Sheet)
 
 ```
 
