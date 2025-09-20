@@ -165,7 +165,6 @@ IMPORTANT! Do not skip this step
 - **n8n** – low-code automation platform
 - **Blotato** – unified social media posting API
 - **Google Drive / Sheets** – file system + structured content source
-- **Canva** – to generate faceless, video content
 
 ---
 
