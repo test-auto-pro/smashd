@@ -42,7 +42,7 @@ Google Sheets serves as the central control hub and database for the system:
 - Enables content repurposing strategy through historical tracking
 
 ### The AI Agent Component
-The AI agent is part of the n8n workflow (not a separate tool) and generates platform-specific captions, relevant hashtags, and optimized titles based on content category
+The AI agent is part of the n8n workflow (not a separate tool) and generates platform-specific captions, relevant hashtags, and optimized titles based on content category.
 
 ### Key System Benefits
 
@@ -69,7 +69,7 @@ $29-74/month total cost versus $149-599/month for enterprise scheduling tools, w
 
 ### Origin and Enhancement Story
 Based on Sabrina Romanov's n8n workflow for multi-platform posting. Original workflow required manual Google Sheets population and generic captions for all platforms. Enhanced version adds:
-- Apps Script automation for file discovery and data population
+- Automated file discovery and data population
 - AI agent integration for platform-specific caption generation
 - Automated hashtag creation
 - Content tracking for repurposing strategy
@@ -98,6 +98,24 @@ Not suitable for complete beginners expecting plug-and-play solution.
 
 ---
 
+## IDEAL USE CASE
+
+**Perfect for:** Solo creators and solopreneurs with multiple income streams who create their own content but are overwhelmed by manual multi-platform posting. Specifically designed for people comfortable with technical setup who want to eliminate repetitive posting tasks while maintaining content control.
+
+**Created by:** QA Automation Engineer with 20+ years of automation experience and AuDHD diagnosis, built to solve personal need for sustainable content distribution without executive function drain.
+
+---
+
+## TL;DR
+
+Upload media files to categorized Google Drive folders. The system automatically discovers files, generates platform-optimized captions and hashtags using AI, allows you to review and approve, then posts to 9 social media platforms simultaneously through Blotato. Google Sheets tracks everything posted. Cost: $29-74/month. Setup time: 2-4 hours one-time. Posting time: 30 seconds per content piece.
+
+**What it does:** Automates multi-platform content distribution while you maintain creative control.
+
+**What it doesn't do:** Create content, schedule posts by calendar, provide analytics, or manage engagement.
+
+---
+
 ## WHAT THIS SYSTEM IS NOT
 
 ### Not a Content Creation Tool
@@ -122,7 +140,6 @@ Does not include:
 ### Not a No-Code Solution for Non-Technical Users
 Requires technical setup including:
 - n8n workflow configuration
-- Apps Script implementation
 - API key management
 - Google Drive folder structure setup
 - Troubleshooting when connections break
