@@ -105,8 +105,6 @@ Not suitable for complete beginners expecting plug-and-play solution.
 
 **Perfect for:** Solo creators, small business owners and side hustlers with multiple income streams who create their own content but are limited to posting on only a few platforms due to time constraints. Specifically designed for people comfortable with technical setup who want to maximize their reach across platforms while maintaining content control.
 
-**Created by:** QA Automation Engineer with 20+ years of automation experience and AuDHD diagnosis, built to solve personal need for sustainable content distribution without executive function drain.
-
 ---
 
 ## TL;DR
@@ -189,11 +187,3 @@ Generic multi-platform posting means:
 - Need in-depth platform-specific optimization
 - Want AI to create all content including videos and images
 - Need social media strategy or audience growth guidance built in
-
----
-
-## IDEAL USE CASE
-
-**Perfect for:** Solo creators and solopreneurs with multiple income streams who create their own content but are overwhelmed by manual multi-platform posting. Specifically designed for people comfortable with technical setup who want to eliminate repetitive posting tasks while maintaining content control.
-
-**Created by:** QA Automation Engineer with 20+ years of automation experience and AuDHD diagnosis, built to solve personal need for sustainable content distribution without executive function drain.
