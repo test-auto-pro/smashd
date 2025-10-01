@@ -3,7 +3,7 @@
 ## WHAT THIS SYSTEM IS
 
 ### Core Function
-An automated content distribution system that takes media files uploaded to Google Drive and posts them to 9 social media platforms (Instagram, Facebook, TikTok, Pinterest, YouTube, Threads, Twitter, LinkedIn, Bluesky) through Blotato, with automated caption generation and posting tracked in Google Sheets.
+An automated content distribution system that takes media files uploaded to Google Drive and posts them to 9 social media platforms (Instagram, Facebook, TikTok, Pinterest, YouTube, Threads, Twitter, LinkedIn, Bluesky) through Blotato, with AI generated platform optimized titles, captions and hashtags and posted content tracked in Google Sheets.
 
 ### Technical Architecture
 **Tech Stack:**
@@ -16,7 +16,7 @@ An automated content distribution system that takes media files uploaded to Goog
 ### How It Works - The Complete Flow
 
 **Step 1: Content Organization**
-Upload media files (.mp4, .mov, .avi, .png, .jpg, .jpeg, .gif) to Google Drive subfolders organized by business category or income stream (e.g., "Geometric Art," "Automation Tips," "AuDHD Resources").
+Upload media files (.mp4, .mov, .avi, .png, .jpg, .jpeg, .gif) to Google Drive subfolders organized by business category or income stream (e.g., "Service Booking," "Digital Download," "Course Promotion," "Lead Magnet").
 
 **Step 2: Automated File Discovery & Data Population**
 The system automatically discovers new media files in Google Drive and adds them to Google Sheets with filename, media URL, content category, and default title/caption based on the folder category.
@@ -45,6 +45,9 @@ Google Sheets serves as the central control hub and database for the system:
 The AI agent is part of the n8n workflow (not a separate tool) and generates platform-specific captions, relevant hashtags, and optimized titles based on content category
 
 ### Key System Benefits
+
+**Max Reach**
+Distributes content across 9 platforms simultaneously, reaching audiences on Instagram, Facebook, TikTok, Pinterest, YouTube, Threads, Twitter, LinkedIn, and Bluesky with a single upload. Eliminates the need to manually post the same content multiple times across different platforms.
 
 **Time Efficiency**
 Reduces posting from hours of manual platform switching to 30 seconds of uploading files to Google Drive.
