@@ -1,7 +1,5 @@
 # Social Media Automation System - Setup Guide
 
----
-
 ## TL;DR - Quick Setup Overview
 
 **Prerequisites:** Google Drive, Google Sheets, n8n (cloud/self-hosted/local), Blotato account, OpenAI API key
@@ -51,10 +49,10 @@ Before starting setup, you need active accounts for:
 
 **Time per post after setup:** 30 seconds
 
+
 ---
 ![System Diagram](assets/system-diagram.png "Social Media Autoamation System Quick Setup Diagram")
 ---
-
 
 ## Chapter 1: Google Tools Setup
 
@@ -79,7 +77,7 @@ Google Drive
     └── Motivation (10 video files)
 ```
 
-[SCREENSHOT PLACEHOLDER: Google Drive folder structure showing MyContent with Process and Motivation subfolders]
+`[SCREENSHOT PLACEHOLDER: Google Drive folder structure showing MyContent with Process and Motivation subfolders]`
 
 5. Open the Google Sheet template from your download package
 6. In Google Drive, move this spreadsheet file INTO the `MyContent` folder
@@ -110,7 +108,7 @@ Google Drive
 - See the "Enable Autotrigger" dropdown - leave as "No" for now
 - No action needed yet
 
-[SCREENSHOT PLACEHOLDER: Settings tab showing note, Run Now button, and autotrigger controls]
+`[SCREENSHOT PLACEHOLDER: Settings tab showing note, Run Now button, and autotrigger controls]`
 
 **ContentData Tab:**
 - Open this tab
@@ -125,7 +123,7 @@ Google Drive
 - This tab is currently empty - it will fill automatically when you run the Apps Script
 - No action needed yet
 
-[SCREENSHOT PLACEHOLDER: ContentData tab showing column headers with empty rows]
+`[SCREENSHOT PLACEHOLDER: ContentData tab showing column headers with empty rows]`
 
 **Metadata Tab:**
 - Open this tab
@@ -136,7 +134,7 @@ Google Drive
   - **Default Title:** Template used for new content
   - **Default Caption:** Template used for new content
 
-[SCREENSHOT PLACEHOLDER: Metadata tab showing 2 pre-populated example rows]
+`[SCREENSHOT PLACEHOLDER: Metadata tab showing 2 pre-populated example rows]`
 
 **Pre-populated examples:**
 
@@ -166,14 +164,14 @@ Google Drive
 3. Google will show a permissions dialog
 4. Click "Review Permissions"
 
-[SCREENSHOT PLACEHOLDER: Google Apps Script authorization dialog]
+`[SCREENSHOT PLACEHOLDER: Google Apps Script authorization dialog]`
 
 5. Select your Google account
 6. You'll see a warning "Google hasn't verified this app"
 7. Click "Advanced" at the bottom
 8. Click "Go to [script name] (unsafe)" - this is YOUR script, it's safe
 
-[SCREENSHOT PLACEHOLDER: Advanced authorization screen]
+`[SCREENSHOT PLACEHOLDER: Advanced authorization screen]`
 
 9. Click "Allow" to grant permissions:
    - See and download all your Google Drive files
@@ -185,7 +183,7 @@ Google Drive
 11. Watch cell B3 in Settings tab for status message
 12. When complete, you'll see a summary: "Loaded 20 new files"
 
-[SCREENSHOT PLACEHOLDER: Settings tab showing completion message in B3]
+`[SCREENSHOT PLACEHOLDER: Settings tab showing completion message in B3]`
 
 **Verify the results:**
 
@@ -196,7 +194,7 @@ Google Drive
    - Each row has Filename, Media URL, default Title and Caption from Metadata tab
    - All rows show Status = "In Progress"
 
-[SCREENSHOT PLACEHOLDER: ContentData tab with 20 populated rows]
+`[SCREENSHOT PLACEHOLDER: ContentData tab with 20 populated rows]`
 
 **Prepare for posting:**
 
@@ -204,7 +202,7 @@ Google Drive
 16. Click the Status cell for that row
 17. Select "Ready To Post" from the dropdown
 
-[SCREENSHOT PLACEHOLDER: Status dropdown showing options: In Progress, Ready To Post, Posted]
+`[SCREENSHOT PLACEHOLDER: Status dropdown showing options: In Progress, Ready To Post, Posted]`
 
 18. Leave all other rows as "In Progress" for now
 
@@ -249,7 +247,7 @@ Google Drive
 4. For each platform, click "Connect" and follow the OAuth authorization flow
 5. Grant Blotato posting permissions
 
-[SCREENSHOT PLACEHOLDER: Blotato dashboard showing connected social accounts]
+`[SCREENSHOT PLACEHOLDER: Blotato dashboard showing connected social accounts]`
 
 **Important note:** Later in the n8n workflow, you'll need to activate/deactivate nodes based on which platforms you connected here. More on this in Chapter 3.
 
@@ -264,7 +262,7 @@ Google Drive
 3. Click "Generate API Key" or copy your existing key
 4. Save this key somewhere safe - you'll need it for n8n setup
 
-[SCREENSHOT PLACEHOLDER: Blotato settings page showing API key location]
+`[SCREENSHOT PLACEHOLDER: Blotato settings page showing API key location]`
 
 **For detailed instructions:** See [Blotato API documentation link - to be provided]
 
@@ -283,7 +281,7 @@ Google Drive
 3. Select the `workflow.json` file from your download package
 4. The workflow will load with all nodes pre-configured
 
-[SCREENSHOT PLACEHOLDER: n8n import dialog]
+`[SCREENSHOT PLACEHOLDER: n8n import dialog]`
 
 5. You'll see the workflow canvas with multiple connected nodes:
    - Google Drive trigger
@@ -291,7 +289,7 @@ Google Drive
    - AI Agent node with OpenAI
    - Multiple Blotato posting nodes (one per platform)
 
-[SCREENSHOT PLACEHOLDER: n8n workflow overview showing all nodes]
+`[SCREENSHOT PLACEHOLDER: n8n workflow overview showing all nodes]`
 
 **Review the workflow structure:**
 - **Trigger:** Checks Google Sheets for rows with Status = "Ready To Post"
@@ -324,7 +322,7 @@ This is the most technical step. Take your time.
 - Add authorized redirect URIs from n8n
 - Copy Client ID and Client Secret into n8n
 
-[SCREENSHOT PLACEHOLDER: Google Cloud Console API credentials page]
+`[SCREENSHOT PLACEHOLDER: Google Cloud Console API credentials page]`
 
 **This is the hardest part of setup.** Follow n8n's documentation for detailed OAuth setup: [n8n Google OAuth documentation link]
 
@@ -339,7 +337,7 @@ This is the most technical step. Take your time.
 3. Enter your OpenAI API key
 4. Select model: gpt-4 or gpt-3.5-turbo (depending on your preference and budget)
 
-[SCREENSHOT PLACEHOLDER: n8n OpenAI credential setup]
+`[SCREENSHOT PLACEHOLDER: n8n OpenAI credential setup]`
 
 **Blotato API:**
 
@@ -347,7 +345,7 @@ This is the most technical step. Take your time.
 2. Click "Create New Credential"
 3. Enter your Blotato API key from Chapter 2, Step 3
 
-[SCREENSHOT PLACEHOLDER: n8n Blotato credential setup]
+`[SCREENSHOT PLACEHOLDER: n8n Blotato credential setup]`
 
 **Activate/Deactivate Platform Nodes:**
 
@@ -357,7 +355,7 @@ This is the most technical step. Take your time.
    - Select "Deactivate"
    - Deactivated nodes are grayed out
 
-[SCREENSHOT PLACEHOLDER: n8n showing how to deactivate a node]
+`[SCREENSHOT PLACEHOLDER: n8n showing how to deactivate a node]`
 
 6. Only keep active the platforms you connected in Chapter 2
 
@@ -381,7 +379,7 @@ This is the most technical step. Take your time.
 2. Watch the nodes light up as they process
 3. Execution should take 30-60 seconds
 
-[SCREENSHOT PLACEHOLDER: n8n workflow executing with nodes lighting up]
+`[SCREENSHOT PLACEHOLDER: n8n workflow executing with nodes lighting up]`
 
 **Success indicators:**
 
@@ -396,7 +394,7 @@ This is the most technical step. Take your time.
 6. You should see your test post scheduled for 7 days from now
 7. **This is intentional** - posts are scheduled in the future so you can test safely and delete if needed
 
-[SCREENSHOT PLACEHOLDER: Blotato dashboard showing scheduled post]
+`[SCREENSHOT PLACEHOLDER: Blotato dashboard showing scheduled post]`
 
 **In Google Sheets:**
 8. Open your ContentData tab
@@ -409,7 +407,7 @@ This is the most technical step. Take your time.
       - Platform-specific caption
       - Platform-specific hashtags
 
-[SCREENSHOT PLACEHOLDER: ContentData tab showing updated row with timestamps and captions]
+`[SCREENSHOT PLACEHOLDER: ContentData tab showing updated row with timestamps and captions]
 
 **If you see all these success indicators: Congratulations! Your system is working.**
 
@@ -634,7 +632,7 @@ If you rename a Google Drive subfolder:
 4. Repeat for all active Blotato nodes
 5. Save the workflow
 
-[SCREENSHOT PLACEHOLDER: Blotato node showing Scheduled Time field at bottom]
+`[SCREENSHOT PLACEHOLDER: Blotato node showing Scheduled Time field at bottom]`
 
 **Advanced:** You can add logic to schedule posts based on content category or other factors by adding decision nodes before Blotato nodes.
 
@@ -670,3 +668,78 @@ You've successfully set up your Social Media Automation System.
 - Refer to Customizations section as you grow
 
 You now have a professional-grade content distribution system at a fraction of the cost of enterprise tools.
+
+---
+
+## Glossary of Terms
+
+### n8n Hosting Options
+
+**Cloud n8n (Paid)**
+- Hosted by n8n on their servers
+- Cost: Starting at $25/month
+- Pros: No maintenance, always updated, accessible from anywhere, reliable uptime
+- Cons: Monthly cost, limited control over infrastructure
+- Best for: Users who want simplicity and don't mind the monthly fee
+
+**Self-Hosted n8n (Cloud, Paid)**
+- You deploy n8n on cloud servers (AWS, DigitalOcean, etc.)
+- Cost: Server hosting fees ($5-20/month depending on provider and resources)
+- Pros: More control than managed cloud, no per-execution fees, can customize
+- Cons: Requires technical setup, you manage updates and maintenance, server costs
+- Best for: Technical users who want control but need internet accessibility
+
+**Local n8n (Free)**
+- n8n runs on your own computer
+- Cost: $0 (completely free)
+- Pros: No monthly fees, full control, no data leaves your machine
+- Cons: Only works when your computer is on, requires local maintenance and updates, not accessible remotely
+- Best for: Cost-conscious technical users willing to maintain their own installation
+- **Learn more:** [Link to Local n8n Installation Guide - to be provided]
+
+**Which should you choose?**
+- Want simplicity? → Cloud n8n ($25/month)
+- Have technical skills and want to save money? → Local n8n (free)
+- Need remote access but want control? → Self-hosted cloud ($5-20/month)
+
+### Key Terms
+
+**OAuth**
+- Authentication method that lets n8n access your Google account without storing your password
+- You authorize once through Google's secure login
+- Used for Google Drive and Google Sheets connections
+
+**API Key**
+- Secret credential that identifies your account to a service
+- Like a password, but for applications instead of humans
+- Used for Blotato and OpenAI connections
+
+**Apps Script**
+- Google's JavaScript platform for automating Google Workspace
+- Embedded in your Google Sheet to scan Drive folders
+- Runs automatically or manually via "Run Now" button
+
+**Workflow**
+- Series of connected automation steps in n8n
+- Each step (node) performs one action
+- Data flows from one node to the next
+
+**Node**
+- Individual step in an n8n workflow
+- Examples: Google Sheets node, AI Agent node, Blotato posting node
+- Can be activated (runs) or deactivated (skipped)
+
+**Credential**
+- Stored authentication information in n8n
+- One credential can be reused across multiple nodes
+- Keeps your API keys and OAuth tokens secure
+
+**Business Context**
+- Description in Metadata tab that tells AI Agent about your audience and brand voice
+- Used to generate platform-appropriate captions
+- More detailed context = better AI-generated content
+
+**Content Category**
+- Google Drive subfolder name that organizes your content
+- Must match exactly between Drive folder and Metadata tab
+- Used to apply correct Business Context to each piece of content
