@@ -1,5 +1,24 @@
 # Social Media Automation System - Setup Guide
 
+---
+
+## TL;DR - Quick Setup Overview
+
+**Prerequisites:** Google Drive, Google Sheets, n8n (cloud/self-hosted/local), Blotato account, OpenAI API key
+
+**Setup Steps:**
+1. **Google Tools (30 min):** Create MyContent folder structure → Import Google Sheet → Run Apps Script to scan files
+2. **Blotato (15 min):** Register account → Connect social platforms → Copy API key
+3. **n8n (60-90 min):** Import workflow JSON → Configure 4 credentials (Google OAuth, OpenAI, Blotato) → Activate/deactivate platform nodes → Test run
+
+**First run:** Mark one row "Ready To Post" in Google Sheets → Execute n8n workflow → Verify post scheduled in Blotato → Check Google Sheet updated with timestamps
+
+**Cost:** $29-74/month depending on n8n hosting choice (see Glossary for free local option)
+
+**Time investment:** 2-4 hours setup, then 30 seconds per post
+
+---
+
 ## Introduction
 
 This system posts your original content to up to 9 social platforms, helping solo creators save time and resources on social media distribution without hiring a big team.
@@ -604,13 +623,15 @@ If you rename a Google Drive subfolder:
 
 **To change scheduling:**
 1. Click any Blotato posting node
-2. Find the "Schedule Time" or "Publish Date" parameter
+2. Scroll down to the bottom to "Scheduled Time" option
 3. Options:
-   - Post immediately: Set to "now"
+   - Post immediately: leave blank
    - Post at specific time: Set date/time value
    - Keep as scheduled: Leave at +7 days
 4. Repeat for all active Blotato nodes
 5. Save the workflow
+
+[SCREENSHOT PLACEHOLDER: Blotato node showing Scheduled Time field at bottom]
 
 **Advanced:** You can add logic to schedule posts based on content category or other factors by adding decision nodes before Blotato nodes.
 
