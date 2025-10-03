@@ -52,6 +52,9 @@ Before starting setup, you need active accounts for:
 **Time per post after setup:** 30 seconds
 
 ---
+![System Diagram](assets/system-diagram.png "Social Media Autoamation System Quick Setup Diagram")
+---
+
 
 ## Chapter 1: Google Tools Setup
 
