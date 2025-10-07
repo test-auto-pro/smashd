@@ -23,7 +23,7 @@ Instead of manually logging into each platform and posting the same content repe
 
 User uploads media files to organized cloud folders by business category. Automated system discovers new files and populates the tracking sheet with file details and default metadata. AI Agent generates platform-optimized titles, captions and hashtags based on content category. n8n workflow sends content to Blotato, which posts to all 9 platforms simultaneously. The system tracks what posted where and when for future repurposing.
 
-**⚠️ IMPORTANT: Test with provided files first**
+**⚠️ IMPORTANT: Test with provided folder structure first**
 
 This package includes 20 test video files (10 in "Process" folder, 10 in "Motivation" folder). You MUST set up and test the system with these folder naming conventions first. Once everything works correctly, then customize for your own content and categories.
 
@@ -65,6 +65,8 @@ Google Drive
     └── Motivation
 ```
 
+![folder_structure](assets/folder_structure.png)
+
 `[SCREENSHOT: Google Drive folder structure showing MyContent with Process and Motivation subfolders]`
 
 **Copy the Google Sheet Template:**
@@ -76,6 +78,8 @@ Google Drive
 ☐ Click on the file name at the top of the sheet
 
 ☐ Delete "Copy of " from the name - the file must be named exactly: `Social_Media_Publisher_PRO_V2.4`
+
+![rename_file](assets/rename_file.png)
 
 `[SCREENSHOT: Showing how to rename the file by clicking on the name at top]`
 
@@ -118,6 +122,8 @@ You'll see 3 tabs at the bottom: Settings, ContentData, Metadata
 - See the "Update ContentData" button - you'll use this later
 - See the "Enable Autotrigger" dropdown - leave as "No" for now
 
+![settings_tab](assets/settings_tab.png)
+
 `[SCREENSHOT: Settings tab showing note, Update ContentData button, and autotrigger controls]`
 
 **ContentData Tab:**
@@ -126,6 +132,8 @@ You'll see 3 tabs at the bottom: Settings, ContentData, Metadata
   - Filename, Media URL, Content Category, Title, Caption, Status
   - Platform columns (instagram, facebook, tiktok, pinterest, youtube, threads, twitter, linkedin, bluesky)
 - This tab is currently empty - it will fill automatically when you run the Apps Script
+
+![contentdata_tab](assets/contentdata_tab.png)
 
 `[SCREENSHOT: ContentData tab showing column headers with empty rows]`
 
@@ -137,6 +145,8 @@ You'll see 3 tabs at the bottom: Settings, ContentData, Metadata
   - **Business Context:** Full description of audience and positioning
   - **Default Title:** Template used for new content
   - **Default Caption:** Template used for new content
+
+![metadata_tab](assets/metadata_tab.png)
 
 `[SCREENSHOT: Metadata tab showing 2 pre-populated example rows]`
 
@@ -168,11 +178,15 @@ When you click Update ContentData for the first time, Google will show you sever
 
 ☐ Click **"Review Permissions"**
 
+![auth_required](assets/auth_required.png)
+
 `[SCREENSHOT: Authorization required dialog]`
 
 **Screen 2: Choose Account**
 
 ☐ Select your Google account (the one you're using for this setup)
+
+![account_selection](assets/account_selection.png)
 
 `[SCREENSHOT: Account selection screen]`
 
@@ -181,6 +195,8 @@ When you click Update ContentData for the first time, Google will show you sever
 ☐ Click **"Advanced"** at the bottom left
 
 ☐ Click **"Go to [script name] (unsafe)"**
+
+![unverified_app](assets/unverified_app.png)
 
 `[SCREENSHOT: Unverified app warning with Advanced button highlighted]`
 
@@ -194,11 +210,15 @@ When you click Update ContentData for the first time, Google will show you sever
 
 ☐ Click **"Allow"**
 
+![grant_permissions](assets/grant_permissions.png)
+
 `[SCREENSHOT: Permission grant screen with Allow button]`
 
 **After authorization:**
 
 The script will run (may take 30-60 seconds for 20 files). Watch cell B3 in Settings tab for status message. When complete, you'll see a summary: "Loaded 20 new files"
+
+![script_complete](assets/script_complete.png)
 
 `[SCREENSHOT: Settings tab showing completion message in B3]`
 
@@ -214,6 +234,8 @@ You should see 20 rows of data:
 - Each row has Filename, Media URL, default Title and Caption from Metadata tab
 - All rows show Status = "In Progress"
 
+![data_loaded](assets/data_loaded.png)
+
 `[SCREENSHOT: ContentData tab with 20 populated rows]`
 
 **Prepare for posting:**
@@ -223,6 +245,8 @@ You should see 20 rows of data:
 ☐ Click the Status cell for that row
 
 ☐ Select "Ready To Post" from the dropdown
+
+![status_dropdown](assets/status_dropdown.png)
 
 `[SCREENSHOT: Status dropdown showing options: In Progress, Ready To Post, Posted]`
 
@@ -275,6 +299,8 @@ You should see 20 rows of data:
 
 ☐ Grant Blotato posting permissions
 
+![blotato_connected](assets/blotato_connected.png)
+
 `[SCREENSHOT: Blotato dashboard showing connected social accounts]`
 
 **Important note:** Later in Section 2, you'll need to activate/deactivate nodes based on which platforms you connected here. More on this in Section 3.
@@ -294,6 +320,8 @@ You should see 20 rows of data:
 ☐ Click "Generate API Key" or copy your existing key
 
 ☐ Save this key somewhere safe - you'll need it for n8n setup
+
+![blotato_api_key](assets/blotato_api_key.png)
 
 `[SCREENSHOT: Blotato settings page showing API key location]`
 
@@ -319,6 +347,8 @@ You should see 20 rows of data:
 
 The workflow will load with all nodes pre-configured.
 
+![n8n_import](assets/n8n_import.png)
+
 `[SCREENSHOT: n8n import dialog]`
 
 You'll see the workflow canvas with multiple connected nodes:
@@ -326,6 +356,8 @@ You'll see the workflow canvas with multiple connected nodes:
 - Google Sheets nodes
 - AI Agent node with OpenAI
 - Multiple Blotato posting nodes (one per platform)
+
+![workflow_overview](assets/workflow_overview.png)
 
 `[SCREENSHOT: n8n workflow overview showing all nodes]`
 
@@ -379,6 +411,8 @@ This is the most technical step. Take your time.
 
 ☐ Select model: gpt-4 or gpt-3.5-turbo (depending on your preference)
 
+![openai_credential](assets/openai_credential.png)
+
 `[SCREENSHOT: n8n OpenAI credential setup]`
 
 **Blotato API:**
@@ -388,6 +422,8 @@ This is the most technical step. Take your time.
 ☐ Click "Create New Credential"
 
 ☐ Enter your Blotato API key from Section 2, Step 3
+
+![blotato_credential](assets/blotato_credential.png)
 
 `[SCREENSHOT: n8n Blotato credential setup]`
 
@@ -399,6 +435,8 @@ This is the most technical step. Take your time.
    - Right-click the node
    - Select "Deactivate"
    - Deactivated nodes are grayed out
+
+![deactivate_node](assets/deactivate_node.png)
 
 `[SCREENSHOT: n8n showing how to deactivate a node]`
 
@@ -426,6 +464,8 @@ This is the most technical step. Take your time.
 
 Watch the nodes light up as they process. Execution should take 30-60 seconds.
 
+![workflow_executing](assets/workflow_executing.png)
+
 `[SCREENSHOT: n8n workflow executing with nodes lighting up]`
 
 **Success indicators:**
@@ -443,6 +483,8 @@ Watch the nodes light up as they process. Execution should take 30-60 seconds.
 
 You should see your test post scheduled for 7 days from now. **This is intentional** - posts are scheduled in the future so you can test safely and delete if needed.
 
+![blotato_scheduled](assets/blotato_scheduled.png)
+
 `[SCREENSHOT: Blotato dashboard showing scheduled post]`
 
 **In Google Sheets:**
@@ -458,6 +500,8 @@ Verify these updates:
   - Platform-specific title (for YouTube)
   - Platform-specific caption
   - Platform-specific hashtags
+
+![sheet_updated](assets/sheet_updated.png)
 
 `[SCREENSHOT: ContentData tab showing updated row with timestamps and captions]`
 
@@ -688,6 +732,8 @@ If you rename a Google Drive subfolder:
    - Keep as scheduled: Leave at +7 days
 4. Repeat for all active Blotato nodes
 5. Save the workflow
+
+![scheduled_time](assets/scheduled_time.png)
 
 `[SCREENSHOT: Blotato node showing Scheduled Time field at bottom]`
 
