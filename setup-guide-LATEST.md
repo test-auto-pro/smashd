@@ -47,9 +47,13 @@ Before starting setup, you need active accounts for:
 
 **What you're doing:** Setting up organized cloud storage for your content files and copying the system template.
 
-1. Open your Google Drive
-2. Create a new folder named `MyContent`
-3. Inside `MyContent`, create two subfolders:
+**ACTION STEPS:**
+
+☐ Open your Google Drive
+
+☐ Create a new folder named `MyContent`
+
+☐ Inside `MyContent`, create two subfolders:
    - `Process`
    - `Motivation`
 
@@ -65,25 +69,23 @@ Google Drive
 
 **Copy the Google Sheet Template:**
 
-4. Open the template link provided in your download package
-5. Click **File** → **Make a copy**
-6. Google will create a copy named "Copy of Social_Media_Publisher_PRO_V2.4"
+☐ Open the template link provided in your download package
 
-**IMPORTANT: Rename the file**
+☐ Click **File** → **Make a copy**
 
-7. Click on the file name at the top of the sheet
-8. Delete "Copy of " from the name
-9. The file must be named exactly: `Social_Media_Publisher_PRO_V2.4`
+☐ Click on the file name at the top of the sheet
+
+☐ Delete "Copy of " from the name - the file must be named exactly: `Social_Media_Publisher_PRO_V2.4`
 
 `[SCREENSHOT: Showing how to rename the file by clicking on the name at top]`
 
 **Why this matters:** The n8n workflow looks for this exact file name. If the name doesn't match, the automation won't work.
 
-10. Move this renamed spreadsheet file INTO the `MyContent` folder
+☐ Move this renamed spreadsheet file INTO the `MyContent` folder
 
 **Copy Test Files:**
 
-11. Copy the 20 test video files from your download package:
+☐ Copy the 20 test video files from your download package:
    - 10 files into the `Process` folder
    - 10 files into the `Motivation` folder
 
@@ -104,30 +106,26 @@ Google Drive
 
 **What you're doing:** Understanding your control center for the automation system.
 
-1. Open the Google Sheet you just placed in `MyContent` folder
-2. You'll see 3 tabs at the bottom: Settings, ContentData, Metadata
+**ACTION STEPS:**
+
+☐ Open the Google Sheet you just placed in `MyContent` folder
+
+You'll see 3 tabs at the bottom: Settings, ContentData, Metadata
 
 **Settings Tab:**
-- Open this tab first
+- Open this tab
 - Read the note about accepted file formats (standard video: .mp4, .mov, .avi; images: .png, .jpg, .jpeg, .gif)
-- See the "Run Now" button - you'll use this later
+- See the "Update ContentData" button - you'll use this later
 - See the "Enable Autotrigger" dropdown - leave as "No" for now
-- No action needed yet
 
-`[SCREENSHOT: Settings tab showing note, Run Now button, and autotrigger controls]`
+`[SCREENSHOT: Settings tab showing note, Update ContentData button, and autotrigger controls]`
 
 **ContentData Tab:**
 - Open this tab
 - Review the column headers:
-  - Filename
-  - Media URL
-  - Content Category
-  - Title
-  - Caption
-  - Status
+  - Filename, Media URL, Content Category, Title, Caption, Status
   - Platform columns (instagram, facebook, tiktok, pinterest, youtube, threads, twitter, linkedin, bluesky)
 - This tab is currently empty - it will fill automatically when you run the Apps Script
-- No action needed yet
 
 `[SCREENSHOT: ContentData tab showing column headers with empty rows]`
 
@@ -144,15 +142,9 @@ Google Drive
 
 **Pre-populated examples:**
 
-**Process folder context:**
-- Audience: Solopreneurs, Side Hustlers and Small Business Owners creating social media content with the purpose of content marketing. Creators who already produce videos or images but get stuck on posting to multiple social platforms. People frustrated by device switching, app juggling, and rewriting titles, captions and CTAs.
-- Positioning: AI powered smart automation that removes posting friction. Upload once to Google Drive, system optimizes and posts to 9 platforms. Focus is on eliminating tedious multi-platform, device, app repetition.
-- Voice: casual and relatable, like a friend sharing a hack. Emphasizes the ease and relief of having posting handled automatically.
+The Metadata tab contains detailed Business Context examples for both Process and Motivation folders. Review these examples to understand the level of detail needed for the AI Agent to generate relevant content.
 
-**Motivation folder context:**
-- Audience: people interested in manifestation, spiritual growth, and conscious living. Followers of Bashar, Abraham Hicks, and Law of Attraction teachings who scroll for daily reminders of their power and alignment.
-- Positioning: stay aligned with your vision through faceless motivational videos that inspire trust, belief, and manifestation without showing a face.
-- Voice: calm, clear, outcome-focused. Affirming and uplifting.
+**Note:** Business Context is what allows the AI Agent to generate relevant titles, captions, and hashtags that match your brand voice and audience.
 
 **Why this matters:** The AI Agent uses Business Context to generate platform-optimized captions and hashtags that match your brand voice and audience.
 
@@ -162,32 +154,33 @@ Google Drive
 
 **What you're doing:** Automatically discovering your 20 test files and populating the tracking sheet.
 
-1. Go back to the **Settings** tab
-2. Click the **"Run Now"** button
+**ACTION STEPS:**
+
+☐ Go back to the **Settings** tab
+
+☐ Click the **"Update ContentData"** button
 
 **Authorization Process (First Time Only - Required by Google)**
 
-When you click Run Now for the first time, Google will show you several security screens. This is normal and required for ANY Apps Script that accesses your Drive and Sheets files, even your own personal scripts. Here's what you'll see and what to do:
+When you click Update ContentData for the first time, Google will show you several security screens. This is normal and required for ANY Apps Script that accesses your Drive and Sheets files, even your own personal scripts. Here's what you'll see and what to do:
 
 **Screen 1: Authorization Required**
 
-3. Google will show "Authorization required"
-4. Click **"Review Permissions"**
+☐ Click **"Review Permissions"**
 
 `[SCREENSHOT: Authorization required dialog]`
 
 **Screen 2: Choose Account**
 
-5. Select your Google account (the one you're using for this setup)
+☐ Select your Google account (the one you're using for this setup)
 
 `[SCREENSHOT: Account selection screen]`
 
 **Screen 3: Unverified App Warning**
 
-6. You'll see a warning: "Google hasn't verified this app"
-7. This warning appears for ALL personal Apps Scripts - it's normal
-8. Click **"Advanced"** at the bottom left
-9. Click **"Go to [script name] (unsafe)"**
+☐ Click **"Advanced"** at the bottom left
+
+☐ Click **"Go to [script name] (unsafe)"**
 
 `[SCREENSHOT: Unverified app warning with Advanced button highlighted]`
 
@@ -197,43 +190,43 @@ When you click Run Now for the first time, Google will show you several security
 
 **Screen 4: Grant Permissions**
 
-10. Review the permissions list:
-    - See and download all your Google Drive files
-    - View and manage spreadsheets
-11. Click **"Allow"**
+☐ Review the permissions list (See and download all your Google Drive files, View and manage spreadsheets)
+
+☐ Click **"Allow"**
 
 `[SCREENSHOT: Permission grant screen with Allow button]`
 
 **After authorization:**
 
-12. The script will run (may take 30-60 seconds for 20 files)
-13. Watch cell B3 in Settings tab for status message
-14. When complete, you'll see a summary: "Loaded 20 new files"
+The script will run (may take 30-60 seconds for 20 files). Watch cell B3 in Settings tab for status message. When complete, you'll see a summary: "Loaded 20 new files"
 
 `[SCREENSHOT: Settings tab showing completion message in B3]`
 
-**If you see an error on first run:** This can happen occasionally. Simply click **"Run Now"** again. The second run should work.
+**If you see an error on first run:** This can happen occasionally. Simply click **"Update ContentData"** again. The second run should work.
 
 **Verify the results:**
 
-15. Switch to **ContentData** tab
-16. You should see 20 rows of data:
-   - 10 rows with Content Category = "Process"
-   - 10 rows with Content Category = "Motivation"
-   - Each row has Filename, Media URL, default Title and Caption from Metadata tab
-   - All rows show Status = "In Progress"
+☐ Switch to **ContentData** tab
+
+You should see 20 rows of data:
+- 10 rows with Content Category = "Process"
+- 10 rows with Content Category = "Motivation"
+- Each row has Filename, Media URL, default Title and Caption from Metadata tab
+- All rows show Status = "In Progress"
 
 `[SCREENSHOT: ContentData tab with 20 populated rows]`
 
 **Prepare for posting:**
 
-17. Pick ONE row to test with (any file from either folder)
-18. Click the Status cell for that row
-19. Select "Ready To Post" from the dropdown
+☐ Pick ONE row to test with (any file from either folder)
+
+☐ Click the Status cell for that row
+
+☐ Select "Ready To Post" from the dropdown
 
 `[SCREENSHOT: Status dropdown showing options: In Progress, Ready To Post, Posted]`
 
-20. Leave all other rows as "In Progress" for now
+☐ Leave all other rows as "In Progress" for now
 
 **Why this matters:** Only rows marked "Ready To Post" will be processed by the n8n workflow. This gives you control over what posts and when.
 
@@ -245,9 +238,11 @@ When you click Run Now for the first time, Google will show you several security
 
 **What you're doing:** Setting up your multi-platform posting service.
 
-1. Go to Blotato registration page using the affiliate link provided (or blotato.com)
-2. Create your account
-3. Free trial available
+**ACTION STEPS:**
+
+☐ Go to Blotato registration page using the affiliate link provided (or blotato.com)
+
+☐ Create your account (free trial available)
 
 **Why this matters:** Blotato handles the actual posting to all 9 social platforms through one API.
 
@@ -257,9 +252,13 @@ When you click Run Now for the first time, Google will show you several security
 
 **What you're doing:** Authorizing Blotato to post on your behalf.
 
-1. Log into your Blotato account
-2. Navigate to the "Connect Accounts" or "Social Accounts" section
-3. Connect as many of these platforms as you want to use:
+**ACTION STEPS:**
+
+☐ Log into your Blotato account
+
+☐ Navigate to the "Connect Accounts" or "Social Accounts" section
+
+☐ Connect as many of these platforms as you want to use:
    - Instagram
    - Facebook
    - TikTok
@@ -272,8 +271,9 @@ When you click Run Now for the first time, Google will show you several security
 
 **You don't need all 9.** Connect only the platforms you actually use.
 
-4. For each platform, click "Connect" and follow the OAuth authorization flow
-5. Grant Blotato posting permissions
+☐ For each platform, click "Connect" and follow the OAuth authorization flow
+
+☐ Grant Blotato posting permissions
 
 `[SCREENSHOT: Blotato dashboard showing connected social accounts]`
 
@@ -285,10 +285,15 @@ When you click Run Now for the first time, Google will show you several security
 
 **What you're doing:** Getting your authentication credential for n8n to communicate with Blotato.
 
-1. In your Blotato dashboard, go to **Account Settings**
-2. Find the **API** or **API Keys** section
-3. Click "Generate API Key" or copy your existing key
-4. Save this key somewhere safe - you'll need it for n8n setup
+**ACTION STEPS:**
+
+☐ In your Blotato dashboard, go to **Account Settings**
+
+☐ Find the **API** or **API Keys** section
+
+☐ Click "Generate API Key" or copy your existing key
+
+☐ Save this key somewhere safe - you'll need it for n8n setup
 
 `[SCREENSHOT: Blotato settings page showing API key location]`
 
@@ -304,18 +309,23 @@ When you click Run Now for the first time, Google will show you several security
 
 **What you're doing:** Loading the pre-built automation workflow into n8n.
 
-1. Log into your n8n instance (cloud or self-hosted)
-2. Click **"Add Workflow"** → **"Import from File"**
-3. Select the `workflow.json` file from your download package
-4. The workflow will load with all nodes pre-configured
+**ACTION STEPS:**
+
+☐ Log into your n8n instance (cloud or self-hosted)
+
+☐ Click **"Add Workflow"** → **"Import from File"**
+
+☐ Select the `workflow.json` file from your download package
+
+The workflow will load with all nodes pre-configured.
 
 `[SCREENSHOT: n8n import dialog]`
 
-5. You'll see the workflow canvas with multiple connected nodes:
-   - Google Drive trigger
-   - Google Sheets nodes
-   - AI Agent node with OpenAI
-   - Multiple Blotato posting nodes (one per platform)
+You'll see the workflow canvas with multiple connected nodes:
+- Google Drive trigger
+- Google Sheets nodes
+- AI Agent node with OpenAI
+- Multiple Blotato posting nodes (one per platform)
 
 `[SCREENSHOT: n8n workflow overview showing all nodes]`
 
@@ -337,51 +347,62 @@ This is the most technical step. Take your time.
 
 **Google Drive and Google Sheets (OAuth):**
 
-1. Click on any Google Drive or Google Sheets node
-2. Click "Create New Credential"
-3. Follow n8n's official documentation for Google OAuth setup: [n8n Google OAuth documentation link]
-   - This covers creating a Google Cloud Console project
-   - Enabling required APIs
-   - Setting up OAuth credentials
-   - Configuring redirect URIs
+**ACTION STEPS:**
+
+☐ Click on any Google Drive or Google Sheets node
+
+☐ Click "Create New Credential"
+
+☐ Follow n8n's official documentation for Google OAuth setup: [n8n Google OAuth documentation link]
 
 **This is the most technical step.** n8n's documentation provides current, detailed instructions that account for any Google Cloud Console interface changes.
 
-4. After completing OAuth setup following n8n's guide, authorize n8n to access your Google account
-5. Select your Google Drive folder (MyContent) for the Google Drive node
-6. Select your Google Sheet (Social_Media_Publisher_PRO_V2.4) for the Google Sheets nodes
+☐ After completing OAuth setup following n8n's guide, authorize n8n to access your Google account
+
+☐ Select your Google Drive folder (MyContent) for the Google Drive node
+
+☐ Select your Google Sheet (Social_Media_Publisher_PRO_V2.4) for the Google Sheets nodes
 
 **OpenAI API:**
 
-1. If you haven't already, register at platform.openai.com
-2. Set up billing and add credit to your account
-3. Generate an API key from the API Keys section
-4. In n8n, click on the AI Agent node
-5. Click "Create New Credential" for OpenAI
-6. Enter your OpenAI API key
-7. Select model: gpt-4 or gpt-3.5-turbo (depending on your preference)
+☐ If you haven't already, register at platform.openai.com
+
+☐ Set up billing and add credit to your account
+
+☐ Generate an API key from the API Keys section
+
+☐ In n8n, click on the AI Agent node
+
+☐ Click "Create New Credential" for OpenAI
+
+☐ Enter your OpenAI API key
+
+☐ Select model: gpt-4 or gpt-3.5-turbo (depending on your preference)
 
 `[SCREENSHOT: n8n OpenAI credential setup]`
 
 **Blotato API:**
 
-1. Click on any Blotato node
-2. Click "Create New Credential"
-3. Enter your Blotato API key from Chapter 2, Step 3
+☐ Click on any Blotato node
+
+☐ Click "Create New Credential"
+
+☐ Enter your Blotato API key from Section 2, Step 3
 
 `[SCREENSHOT: n8n Blotato credential setup]`
 
 **Activate/Deactivate Platform Nodes:**
 
-4. Look at the 9 Blotato posting nodes (Instagram, Facebook, TikTok, etc.)
-5. If you did NOT connect a platform in Blotato, you need to deactivate that node:
+☐ Look at the 9 Blotato posting nodes (Instagram, Facebook, TikTok, etc.)
+
+☐ For each platform you did NOT connect in Blotato:
    - Right-click the node
    - Select "Deactivate"
    - Deactivated nodes are grayed out
 
 `[SCREENSHOT: n8n showing how to deactivate a node]`
 
-6. Only keep active the platforms you connected in Chapter 2
+☐ Only keep active the platforms you connected in Section 2
 
 **Why this matters:** Credentials allow n8n to access your services. Deactivating unused platforms prevents errors.
 
@@ -399,9 +420,11 @@ This is the most technical step. Take your time.
 
 **Execute the workflow:**
 
-1. In n8n workflow canvas, click **"Execute Workflow"** button at the bottom
-2. Watch the nodes light up as they process
-3. Execution should take 30-60 seconds
+**ACTION STEPS:**
+
+☐ In n8n workflow canvas, click **"Execute Workflow"** button at the bottom
+
+Watch the nodes light up as they process. Execution should take 30-60 seconds.
 
 `[SCREENSHOT: n8n workflow executing with nodes lighting up]`
 
@@ -413,23 +436,28 @@ This is the most technical step. Take your time.
 - Output data visible in each node
 
 **In Blotato:**
-4. Log into your Blotato dashboard
-5. Go to "Scheduled Posts" or "Queue"
-6. You should see your test post scheduled for 7 days from now
-7. **This is intentional** - posts are scheduled in the future so you can test safely and delete if needed
+
+☐ Log into your Blotato dashboard
+
+☐ Go to "Calendar"
+
+You should see your test post scheduled for 7 days from now. **This is intentional** - posts are scheduled in the future so you can test safely and delete if needed.
 
 `[SCREENSHOT: Blotato dashboard showing scheduled post]`
 
 **In Google Sheets:**
-8. Open your ContentData tab
-9. Find the row you marked "Ready To Post"
-10. Verify these updates:
-    - Status changed from "Ready To Post" to "Posted"
-    - Each connected platform column shows:
-      - Date/time stamp
-      - Platform-specific title (for YouTube)
-      - Platform-specific caption
-      - Platform-specific hashtags
+
+☐ Open your ContentData tab
+
+☐ Find the row you marked "Ready To Post"
+
+Verify these updates:
+- Status changed from "Ready To Post" to "Posted"
+- Each connected platform column shows:
+  - Date/time stamp
+  - Platform-specific title (for YouTube)
+  - Platform-specific caption
+  - Platform-specific hashtags
 
 `[SCREENSHOT: ContentData tab showing updated row with timestamps and captions]`
 
@@ -437,19 +465,24 @@ This is the most technical step. Take your time.
 
 **What to do with the scheduled test post:**
 
-11. Go back to Blotato dashboard
-12. Find the scheduled post
-13. Either:
+☐ Go back to Blotato dashboard
+
+☐ Find the scheduled post
+
+☐ Either:
     - Delete it if you don't want it published, OR
     - Let it publish in 7 days to verify actual posting works, OR
     - Edit the schedule to post sooner
 
 **Test with more content:**
 
-14. Go back to Google Sheets ContentData tab
-15. Change another row's Status to "Ready To Post"
-16. Run the n8n workflow again
-17. Repeat until you're confident the system works
+☐ Go back to Google Sheets ContentData tab
+
+☐ Change another row's Status to "Ready To Post"
+
+☐ Run the n8n workflow again
+
+☐ Repeat until you're confident the system works
 
 **Why this matters:** Manual testing verifies all components work together before you rely on automation.
 
