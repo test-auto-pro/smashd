@@ -25,7 +25,7 @@ User uploads media files to organized cloud folders by business category. Automa
 
 **⚠️ IMPORTANT: Test with provided files first**
 
-This package includes 20 test video files (10 in "Process" folder, 10 in "Motivation" folder). You MUST set up and test the system with these provided files and naming conventions first. Once everything works correctly, then customize for your own content and categories.
+This package includes 20 test video files (10 in "Process" folder, 10 in "Motivation" folder). You MUST set up and test the system with these folder naming conventions first. Once everything works correctly, then customize for your own content and categories.
 
 ---
 
