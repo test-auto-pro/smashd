@@ -11,7 +11,9 @@
 
 **First run:** Mark one row "Ready To Post" in Google Sheets → Execute n8n workflow → Verify post scheduled in Blotato → Check Google Sheet updated with timestamps
 
-![folder_structure](assets/system_diagram.png)
+![system_diagram](assets/system_diagram.png)
+
+`[SCREENSHOT: System Diagram]`
 ---
 
 ## Introduction
