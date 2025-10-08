@@ -1,5 +1,9 @@
 # Social Media Automation System - Setup Guide
 
+## Table of Contents
+
+---
+
 ## TL;DR - Quick Setup Overview
 
 **Prerequisites:** Google Drive (free), Google Sheets (free), n8n (free or paid options), Blotato (paid), OpenAI API (paid)
@@ -11,9 +15,12 @@
 
 **First run:** Mark one row "Ready To Post" in Google Sheets → Execute n8n workflow → Verify post scheduled in Blotato → Check Google Sheet updated with timestamps
 
+**Cost:** $29-74/month depending on n8n hosting choice (see Glossary for free local option)
+
+**Time investment:** 2-4 hours setup, then 30 seconds per post
+
 ![system_diagram](assets/system_diagram.png)
 
-`[SCREENSHOT: System Diagram]`
 ---
 
 ## Introduction
@@ -539,7 +546,7 @@ Verify these updates:
 
 ### Common Issue 1: Apps Script Permission Errors
 
-**Symptom:** When clicking "Run Now", you see "Authorization required" repeatedly, or script fails to run.
+**Symptom:** When clicking "Update ContentData", you see "Authorization required" repeatedly, or script fails to run.
 
 **Solutions:**
 1. Clear your browser cache and cookies
@@ -631,7 +638,7 @@ Verify these updates:
    - Default Title: [Your template]
    - Default Caption: [Your template]
 3. Upload content to the new folder
-4. Run Apps Script "Run Now"
+4. Run Apps Script "Update ContentData"
 5. No changes needed in n8n - Apps Script automatically detects new folders
 
 **Renaming existing categories:**
@@ -816,7 +823,7 @@ You now have a professional-grade content distribution system.
 **Apps Script**
 - Google's JavaScript platform for automating Google Workspace
 - Embedded in your Google Sheet to scan Drive folders
-- Runs automatically or manually via "Run Now" button
+- Runs automatically or manually via "Update ContentData" button
 
 **Workflow**
 - Series of connected automation steps in n8n
