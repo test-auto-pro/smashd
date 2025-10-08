@@ -81,17 +81,15 @@ Google Drive
 
 ☐ Click **File** → **Make a copy**
 
-☐ Click on the file name at the top of the sheet
-
-☐ Delete "Copy of " from the name - the file must be named exactly: `Social_Media_Publisher_PRO_V2.4`
+☐ Rename to exactly: `Social_Media_Publisher_PRO_V2.4`
 
 ![rename_file](assets/rename_file.png)
 
 `[SCREENSHOT: Showing how to rename the file by clicking on the name at top]`
 
-**Why this matters:** The n8n workflow looks for this exact file name. If the name doesn't match, the automation won't work.
+**Note:** While you can use any filename, using this exact name simplifies setup since it matches the workflow documentation.
 
-☐ Move this renamed spreadsheet file INTO the `MyContent` folder
+☐ Move the spreadsheet file INTO the `MyContent` folder
 
 **Copy Test Files:**
 
@@ -112,7 +110,7 @@ Google Drive
 
 ---
 
-### Step 2: Import and Understand Google Sheet Structure
+### Step 2: Import Google Sheet
 
 **What you're doing:** Understanding your control center for the automation system.
 
@@ -166,9 +164,11 @@ The Metadata tab contains detailed Business Context examples for both Process an
 
 ---
 
-### Step 3: Run Apps Script to Load Data
+### Step 3: Load Media File Data
 
 **What you're doing:** Automatically discovering your 20 test files and populating the tracking sheet.
+
+**Note:** The Google Sheet includes Apps Script - Google's automation tool that scans your Drive folders and loads file data automatically.
 
 **ACTION STEPS:**
 
@@ -248,15 +248,13 @@ You should see 20 rows of data:
 
 ☐ Pick ONE row to test with (any file from either folder)
 
-☐ Click the Status cell for that row
-
-☐ Select "Ready To Post" from the dropdown
+☐ In the Status column, change status from "In Progress" to "Ready To Post"
 
 ![status_dropdown](assets/status_dropdown.png)
 
 `[SCREENSHOT: Status dropdown showing options: In Progress, Ready To Post, Posted]`
 
-☐ Leave all other rows as "In Progress" for now
+☐ Leave all other rows as "In Progress"
 
 **Why this matters:** Only rows marked "Ready To Post" will be processed by the n8n workflow. This gives you control over what posts and when.
 
@@ -319,13 +317,11 @@ You should see 20 rows of data:
 
 **ACTION STEPS:**
 
-☐ In your Blotato dashboard, go to **Account Settings**
+☐ In your Blotato dashboard, go to **Account Settings** → **API** tab
 
-☐ Find the **API** or **API Keys** section
+☐ Copy your API key (automatically generated upon registration)
 
-☐ Click "Generate API Key" or copy your existing key
-
-☐ Save this key somewhere safe - you'll need it for n8n setup
+☐ Save this key - you'll need it for n8n setup
 
 ![blotato_api_key](assets/blotato_api_key.png)
 
@@ -437,10 +433,7 @@ This is the most technical step. Take your time.
 
 ☐ Look at the 9 Blotato posting nodes (Instagram, Facebook, TikTok, etc.)
 
-☐ For each platform you did NOT connect in Blotato:
-   - Right-click the node
-   - Select "Deactivate"
-   - Deactivated nodes are grayed out
+☐ Right-click any platform you did NOT connect in Blotato → Select "Deactivate"
 
 ![deactivate_node](assets/deactivate_node.png)
 
@@ -517,22 +510,15 @@ Verify these updates:
 
 ☐ Go back to Blotato dashboard
 
+☐ Go to "Calendar"
+
 ☐ Find the scheduled post
 
-☐ Either:
-    - Delete it if you don't want it published, OR
-    - Let it publish in 7 days to verify actual posting works, OR
-    - Edit the schedule to post sooner
+☐ Either delete it, let it publish in 7 days, or edit the schedule
 
 **Test with more content:**
 
-☐ Go back to Google Sheets ContentData tab
-
-☐ Change another row's Status to "Ready To Post"
-
-☐ Run the n8n workflow again
-
-☐ Repeat until you're confident the system works
+☐ Change another row's Status to "Ready To Post" → Run the n8n workflow again → Repeat until confident
 
 **Why this matters:** Manual testing verifies all components work together before you rely on automation.
 
