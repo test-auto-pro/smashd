@@ -1,5 +1,21 @@
 # Social Media Automation System - Setup Guide
 
+## Welcome
+
+**Mission: Teach 1 million solo creators social media automation.**
+
+Hello and welcome! If you're a solo creator, you know how challenging it can be to post consistently on social media. Creating content, editing, writing captions, posting... and by the time it's done, it's time to start all over again. Meanwhile, there's the creative work to focus on, time with family and friends, or just a moment to breathe.
+
+This system was built to help with that problem. It posts content to up to 9 platforms automatically - upload to a folder and everything else happens automatically through AI-generated captions, content categories, per-platform tracking, and automated file discovery.
+
+The original workflow existed but required too much manual work to scale for daily posting and had no documentation beyond a video claiming it was "easy" to set up. This enhanced version adds the missing automations, and this guide provides the comprehensive documentation that should have existed from the start.
+
+Clear, step-by-step instructions to build this system once and have it post across multiple platforms without constant manual effort.
+
+Sharing your message on social media is important, but it shouldn't take up all your time. Focus on what you love doing and let automation handle the rest.
+
+---
+
 ## Table of Contents
 
 ---
@@ -59,6 +75,12 @@ Before starting setup, you need active accounts for:
 
 ☐ Create a new folder named `MyContent`
 
+☐ Share MyContent folder via right-click → Select **Share** → **Anyone with the link** (Viewer permissions is ok)
+
+![share_folder](assets/share_folder.png)
+
+`[SCREENSHOT: MyContent folder sharing settings]`
+
 ☐ Inside `MyContent`, create two subfolders:
    - `Process`
    - `Motivation`
@@ -71,10 +93,6 @@ Google Drive
     └── Motivation
 ```
 
-![folder_structure](assets/folder_structure.png)
-
-`[SCREENSHOT: Google Drive folder structure showing MyContent with Process and Motivation subfolders]`
-
 **Copy the Google Sheet Template:**
 
 ☐ Open the template link provided in your download package
@@ -82,10 +100,6 @@ Google Drive
 ☐ Click **File** → **Make a copy**
 
 ☐ Rename to exactly: `Social_Media_Publisher_PRO_V2.4`
-
-![rename_file](assets/rename_file.png)
-
-`[SCREENSHOT: Showing how to rename the file by clicking on the name at top]`
 
 **Note:** While you can use any filename, using this exact name simplifies setup since it matches the workflow documentation.
 
@@ -105,6 +119,10 @@ Google Drive
     ├── Process (10 video files)
     └── Motivation (10 video files)
 ```
+
+![folder_structure](assets/folder_structure.png)
+
+`[SCREENSHOT: Final MyContent folder structure with Google Sheet and test files]`
 
 **Why this matters:** The Apps Script scans from the spreadsheet's location. Both the sheet and content folders must be inside `MyContent`.
 
@@ -606,130 +624,115 @@ Verify these updates:
 
 ---
 
-## Section 5: Customizations
+## Section 5: Customizing for Your Business
 
-### Customizing Content Categories (Folders)
+### Folder Structure Rules
 
-**Adding new content categories:**
+**Content categories = MyContent subfolders**
 
-1. In Google Drive, create a new subfolder inside `MyContent`
-   - Example: `MyContent/Product-Launch`
-2. In Google Sheets **Metadata** tab, add a new row:
-   - Category Folder Name: `Product-Launch` (must match folder name EXACTLY)
-   - Business Context: [Your full audience and positioning description]
-   - Default Title: [Your template]
-   - Default Caption: [Your template]
-3. Upload content to the new folder
-4. Run Apps Script "Update ContentData"
-5. No changes needed in n8n - Apps Script automatically detects new folders
-
-**Renaming existing categories:**
-
-If you rename a Google Drive subfolder:
-1. Update the **Category Folder Name** in Metadata tab to match new name exactly
-2. If you renamed the `MyContent` parent folder:
-   - In n8n, reconnect the Google Drive node and point to the new folder path
-3. If you renamed the Google Sheet file:
-   - In n8n, reconnect the Google Sheets nodes and select the new file name
-
-**Dependencies:**
-- Google Drive folder name ↔ Metadata tab Category Folder Name (must match exactly)
-- MyContent folder location ↔ n8n Google Drive node configuration
-- Google Sheet file name ↔ n8n Google Sheets node configuration
+- **One level only:** `MyContent/FolderName` ✓
+- **No nesting:** `MyContent/Folder/Subfolder` ✗
+- Each subfolder must have matching row in Metadata tab
 
 ---
 
-### Customizing Default Captions and Titles
+### Adding New Folders
 
-**Location:** Google Sheets → Metadata tab
+**Steps:**
 
-**What you can customize:**
-1. **Business Context:** Change audience description, positioning, voice
-   - The AI Agent uses this to understand your brand and generate appropriate content
-   - Be specific about audience pain points, desires, and language style
-2. **Default Title:** Change the template used when new files are discovered
-   - Keep it short and descriptive
-   - AI Agent will optimize this per platform
-3. **Default Caption:** Change the template used when new files are discovered
-   - This is your starting point caption
-   - AI Agent will adapt it for each platform's style and character limits
+1. Create new subfolder in MyContent
+2. Add matching row in Metadata tab:
+   - **Category Folder Name:** Must match folder name exactly (case-sensitive)
+   - **Business Context:** Audience and positioning information for AI
+   - **Default Title:** Template for titles
+   - **Default Caption:** Template for captions
+3. Upload media files to new subfolder
+4. Click "Update ContentData" in Settings tab
 
-**How it works:**
-- When Apps Script discovers a new file, it copies the Default Title and Caption into ContentData
-- Then AI Agent reads the Business Context and generates platform-specific versions
-- You can edit these in ContentData tab before marking "Ready To Post"
-
----
-
-### Customizing AI Agent Behavior
-
-**Location:** n8n workflow → AI Agent node
-
-**What you can customize:**
-
-1. **System Prompt:** Click the AI Agent node → Options → System Message
-   - This tells the AI Agent how to behave
-   - Default prompt instructs it to create platform-optimized content
-   - You can modify tone, style, rules
-
-2. **Input Data:** The AI Agent receives:
-   - Content Category (folder name)
-   - Business Context (from Metadata tab)
-   - Default Title and Caption
-   - You can modify which fields it reads by editing node parameters
-
-3. **Model Selection:** In the AI Agent credential settings
-   - Default: gpt-4 (better quality, higher cost)
-   - Alternative: gpt-3.5-turbo (faster, cheaper, good quality)
-
-**Warning:** If you change the AI Agent's output structure, you may need to update the nodes that process its output. Only modify the prompt text unless you understand the workflow structure.
+**What happens:**
+- Apps Script scans MyContent folder
+- Finds new files
+- Matches folder name to Metadata row
+- Populates ContentData with defaults
+- AI Agent uses Business Context to generate platform-specific content
 
 ---
 
-### Customizing Which Platforms to Use
+### Renaming Folders
 
-**Location:** n8n workflow → Blotato posting nodes
+**If you rename a subfolder:**
+- Update **Category Folder Name** in Metadata tab to match new name exactly
+- Folder name and Metadata entry must match (case-sensitive)
 
-**To use fewer than 9 platforms:**
+**If you rename MyContent folder:**
+- In n8n: Reconnect Google Drive node → point to new folder location
 
-1. In n8n workflow, find the Blotato posting nodes
-2. Right-click any platform node you DON'T want to use
-3. Select "Deactivate"
-4. Deactivated nodes are grayed out and won't execute
-5. Save the workflow
-
-**To add a platform back:**
-1. First connect that platform in Blotato dashboard
-2. In n8n workflow, right-click the deactivated node
-3. Select "Activate"
-4. Make sure the Blotato credential is set
-5. Save the workflow
-
-**Why this matters:** You only pay for Blotato based on your plan, not per platform. But you should only activate platforms you've connected in Blotato to avoid errors.
+**If you rename Google Sheet file:**
+- In n8n: Reconnect Google Sheets nodes → select new file name
 
 ---
 
-### Adjusting Post Scheduling
+### Deleting Folders
 
-**Location:** n8n workflow → Blotato posting nodes
+**If you delete a subfolder:**
+- Remove or update matching row in Metadata tab
+- Next time you run "Update ContentData", rows for deleted files will be automatically removed from ContentData
 
-**Default behavior:** Posts are scheduled 7 days in the future for safe testing.
+---
 
-**To change scheduling:**
-1. Click any Blotato posting node
-2. Scroll down to the bottom to "Scheduled Time" option
-3. Options:
-   - Post immediately: leave blank
-   - Post at specific time: Set date/time value
-   - Keep as scheduled: Leave at +7 days
-4. Repeat for all active Blotato nodes
-5. Save the workflow
+### Metadata Tab Structure
 
-![scheduled_time](assets/scheduled_time.png)
+**Required columns:**
 
-`[SCREENSHOT: Blotato node showing Scheduled Time field at bottom]`
+1. **Category Folder Name**
+   - Must match Google Drive subfolder name exactly
+   - Case-sensitive
+   - Example: `Product-Launch`
 
-**Advanced:** You can add logic to schedule posts based on content category or other factors by adding decision nodes before Blotato nodes.
+2. **Business Context**
+   - AI Agent reads this to understand content type
+   - Include: audience description, content positioning
+   - Example: See pre-populated rows in Metadata tab
+
+3. **Default Title**
+   - Template used when new files discovered
+   - AI Agent optimizes per platform
+
+4. **Default Caption**
+   - Template used when new files discovered
+   - AI Agent adapts for platform limits and style
+
+---
+
+### Replacing Test Files
+
+**To use your own content:**
+
+1. Remove test files from Process and Motivation folders
+2. Upload your media files (.mp4, .mov, .avi, .png, .jpg, .jpeg, .gif)
+3. Click "Update ContentData"
+
+**Optional:** Delete Process and Motivation folders if not needed
+- Remove matching rows from Metadata tab
+
+---
+
+### System Dependencies
+
+**What must match:**
+- Google Drive subfolder name ↔ Metadata "Category Folder Name" (exact, case-sensitive)
+
+**What can change:**
+- MyContent folder name (update n8n Google Drive node)
+- Google Sheet file name (update n8n Google Sheets nodes)
+- Subfolder names (update Metadata tab)
+- Number of subfolders (add/remove rows in Metadata tab)
+
+**What stays fixed:**
+- Metadata tab column names
+- ContentData tab column names
+- Status values: "In Progress", "Ready To Post", "Posted"
+- Platform column names in ContentData
 
 ---
 
@@ -759,6 +762,25 @@ You've successfully set up your Social Media Automation System.
 - Refer to Customizations section as you grow
 
 You now have a professional-grade content distribution system.
+
+---
+
+## Roadmap
+
+This is just the beginning! Here's what's planned for future releases:
+
+**Platform Expansion:**
+- Extend this system to work with Make.com
+- Add Zapier integration options
+
+**Additional Automations:**
+- Automated content category population in Metadata tab
+- More workflow automations to reduce manual steps
+
+**Flexibility Enhancements:**
+- Make AI Agent optional in n8n workflow (for those who prefer manual caption entry or want to reduce OpenAI API costs)
+
+**Have feedback or questions?** I'd love to hear from you! Email me at info@testautomationpro.com to share your experience, suggest features, or ask questions about the system.
 
 ---
 
