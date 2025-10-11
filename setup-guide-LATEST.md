@@ -77,7 +77,7 @@ Before starting setup, you need active accounts for:
 
 ☐ Share MyContent folder via right-click → Select **Share** → **Anyone with the link** (Viewer permissions is ok)
 
-![share_folder](assets/share_folder.gif)
+![share_folder](assets/share_folder_brdr.gif)
 
 `[SCREENSHOT: MyContent folder sharing settings]`
 
