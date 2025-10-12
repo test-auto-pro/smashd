@@ -216,13 +216,17 @@ When you click Update ContentData for the first time, Google will show you sever
 
 **Screen 3: Unverified App Warning**
 
-☐ Click **"Advanced"** at the bottom left
+☐ Click **"Advanced"** 
+
+![unverified_app](assets/unverified_app-advanced.png)
+
+`[SCREENSHOT: Unverified app warnings, click Advanced]`
 
 ☐ Click **"Go to [script name] (unsafe)"**
 
-![unverified_app](assets/unverified_app.png)
+![unverified_app](assets/unverified_app-goto.png)
 
-`[SCREENSHOT: Unverified app warning with Advanced button highlighted]`
+`[SCREENSHOT: Unverified app warnings, click Go To]`
 
 **Note:** The word "unsafe" is misleading. This is YOUR script accessing YOUR files. Google shows this warning because they haven't reviewed your personal script - but it's completely safe since you created it.
 
