@@ -65,9 +65,9 @@ Before starting setup, you need active accounts for:
 
 ## Section 1: Google Tools Setup
 
-### Step 1: Create Folder Structure
+In this section you will set up your Google Drive folder structure, import the tracking spreadsheet, and load your test files.
 
-In this section you will set up organized cloud storage for your content files and copy the system template.
+### Step 1: Create Folder Structure
 
 1. Open your Google Drive
 
@@ -124,8 +124,6 @@ Google Drive
 
 ### Step 2: Import Google Sheet
 
-In this section you will understand your control center for the automation system.
-
 1. Open the Google Sheet you just placed in `MyContent` folder
 
 You'll see 3 tabs at the bottom: Settings, ContentData, Metadata
@@ -165,8 +163,6 @@ The Metadata tab contains detailed Business Context examples for both Process an
 ---
 
 ### Step 3: Load Media File Data
-
-In this section you will automatically discover your 20 test files and populate the tracking sheet.
 
 **NOTE:** The Google Sheet includes Apps Script - Google's automation tool that scans your Drive folders and loads file data automatically.
 
@@ -248,45 +244,41 @@ You should see 20 rows of data:
 
 ## Section 2: Blotato Setup
 
-### Step 1: Register for Blotato Account
+In this section you will register for Blotato, connect your social media accounts, and get your API key.
 
-In this section you will set up your multi-platform posting service.
+### Step 1: Register for Blotato Account
 
 1. Register at Blotato using the affiliate link provided (or blotato.com)
 
-**NOTE:** Blotato handles the actual posting to all 9 social platforms through one API.
+NOTE: Blotato handles the actual posting to all 9 social platforms through one API.
 
 ---
 
 ### Step 2: Connect Your Social Media Accounts
 
-In this section you will authorize Blotato to post on your behalf.
-
 1. In Blotato, navigate to Connect Accounts and connect the platforms you want to use (Instagram, Facebook, TikTok, Pinterest, YouTube, Threads, Twitter, LinkedIn, Bluesky)
 
 ![blotato_connected](assets/blotato_connected.png)
 
-**NOTE:** Later in Section 3, you'll need to activate/deactivate nodes based on which platforms you connected here.
+NOTE: Later in Section 3, you'll need to activate/deactivate nodes based on which platforms you connected here.
 
 ---
 
 ### Step 3: Get Your Blotato API Key
 
-In this section you will get your authentication credential for n8n to communicate with Blotato.
-
 1. In Blotato dashboard, go to Account Settings → API tab and copy your API key
 
 ![blotato_api_key](assets/blotato_api_key.png)
 
-**NOTE:** This API key allows n8n to send your content to Blotato for posting.
+NOTE: This API key allows n8n to send your content to Blotato for posting.
 
 ---
 
 ## Section 3: n8n Setup
 
-### Step 1: Import Workflow and Review Instructions
+In this section you will import the pre-built workflow, configure credentials for all services, and run your first test.
 
-In this section you will load the pre-built automation workflow into n8n.
+### Step 1: Import Workflow and Review Instructions
 
 1. In n8n, click "Add Workflow" → "Import from File" and select the `workflow.json` file from your download package
 
@@ -306,13 +298,11 @@ You'll see the workflow canvas with multiple connected nodes:
 - Blotato nodes: Post to each platform (9 separate nodes)
 - Update Sheet: Marks Status as "Posted" and records timestamps
 
-**NOTE:** Understanding the flow helps you troubleshoot issues and customize later.
+NOTE: Understanding the flow helps you troubleshoot issues and customize later.
 
 ---
 
 ### Step 2: Configure Credentials and Connections
-
-In this section you will connect n8n to your Google Drive, Google Sheets, OpenAI, and Blotato accounts.
 
 This is the most technical step. Take your time.
 
@@ -351,13 +341,11 @@ This is the most technical step. n8n's documentation provides current, detailed 
 
 ![deactivate_node](assets/deactivate_node.png)
 
-**NOTE:** Credentials allow n8n to access your services. Deactivating unused platforms prevents errors.
+NOTE: Credentials allow n8n to access your services. Deactivating unused platforms prevents errors.
 
 ---
 
 ### Step 3: Show Time - First Test Run
-
-In this section you will run the workflow manually to verify everything works.
 
 **Pre-flight check:** ✈️
 - ✓ Google Sheet has 20 rows in ContentData
@@ -402,7 +390,7 @@ In Blotato Calendar, locate your scheduled test post and either delete it or let
 
 4. Change another row's Status to "Ready To Post" → Run the n8n workflow again → Repeat until confident
 
-**NOTE:** Manual testing verifies all components work together before you rely on automation.
+NOTE: Manual testing verifies all components work together before you rely on automation.
 
 ---
 
