@@ -234,21 +234,25 @@ When you click Update ContentData for the first time, Google will show you sever
 
 **Screen 4: Grant Permissions**
 
-☐ Review the permissions list (See and download all your Google Drive files, View and manage spreadsheets)
+☐ Review the permissions list (See and download all your Google Drive files, View and manage spreadsheets) and click `Select All` Checkbox
 
-☐ Click **"Allow"**
+![grant_permissions](assets/grant_permissions01.png)
 
-![grant_permissions](assets/grant_permissions.png)
+`[SCREENSHOT: Permission grant screen with Select All Checkbox]`
 
-`[SCREENSHOT: Permission grant screen with Allow button]`
+☐ Click **"Continue"**
+
+![grant_permissions](assets/grant_permissions02.png)
+
+`[SCREENSHOT: Permission grant screen with Continue button]`
 
 **After authorization:**
 
-The script will run (may take 30-60 seconds for 20 files). Watch cell B3 in Settings tab for status message. When complete, you'll see a summary: "Loaded 20 new files"
+The script will run (may take 30-60 seconds for 20 files). Watch `cell B3 in Settings tab` for status message. When complete, you'll see a summary: `20 New files added` (10 from each of 2 folders)
 
 ![script_complete](assets/script_complete.png)
 
-`[SCREENSHOT: Settings tab showing completion message in B3]`
+`[SCREENSHOT: Settings tab showing completion message]`
 
 **If you see an error on first run:** This can happen occasionally. Simply click **"Update ContentData"** again. The second run should work.
 
