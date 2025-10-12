@@ -97,7 +97,7 @@ Google Drive
 
 7. Rename to exactly: `Social_Media_Publisher_PRO_V2.4`
 
-NOTE: While you can use any filename, using this exact name simplifies setup since it matches the workflow documentation.
+**NOTE:** While you can use any filename, using this exact name simplifies setup since it matches the workflow documentation.
 
 8. Move the spreadsheet file INTO the `MyContent` folder
 
@@ -118,7 +118,7 @@ Google Drive
 
 ![folder_structure](assets/folder_structure.png)
 
-NOTE: The Apps Script scans from the spreadsheet's location. Both the sheet and content folders must be inside `MyContent`.
+**NOTE:** The Apps Script scans from the spreadsheet's location. Both the sheet and content folders must be inside `MyContent`.
 
 ---
 
@@ -160,7 +160,7 @@ You'll see 3 tabs at the bottom: Settings, ContentData, Metadata
 
 The Metadata tab contains detailed Business Context examples for both Process and Motivation folders. Review these examples to understand the level of detail needed for the AI Agent to generate relevant content.
 
-NOTE: Business Context is what allows the AI Agent to generate relevant titles, captions, and hashtags that match your brand voice and audience.
+**NOTE:** Business Context is what allows the AI Agent to generate relevant titles, captions, and hashtags that match your brand voice and audience.
 
 ---
 
@@ -168,7 +168,7 @@ NOTE: Business Context is what allows the AI Agent to generate relevant titles, 
 
 In this section you will automatically discover your 20 test files and populate the tracking sheet.
 
-NOTE: The Google Sheet includes Apps Script - Google's automation tool that scans your Drive folders and loads file data automatically.
+**NOTE:** The Google Sheet includes Apps Script - Google's automation tool that scans your Drive folders and loads file data automatically.
 
 1. In the Settings tab, click the "Update ContentData" button
 
@@ -198,7 +198,7 @@ When you click Update ContentData for the first time, Google will show you sever
 
 ![unverified_app](assets/unverified_app-goto.png)
 
-NOTE: The word "unsafe" is misleading. This is YOUR script accessing YOUR files. Google shows this warning because they haven't reviewed your personal script - but it's completely safe since you created it.
+**NOTE:** The word "unsafe" is misleading. This is YOUR script accessing YOUR files. Google shows this warning because they haven't reviewed your personal script - but it's completely safe since you created it.
 
 Security concerns? A copy of the Apps Script code is provided in your download package. You can copy and paste the code into ChatGPT or any AI tool and ask it to analyze for security risks.
 
@@ -242,7 +242,7 @@ You should see 20 rows of data:
 
 12. Leave all other rows as "In Progress"
 
-NOTE: Only rows marked "Ready To Post" will be processed by the n8n workflow. This gives you control over what posts and when.
+**NOTE:** Only rows marked "Ready To Post" will be processed by the n8n workflow. This gives you control over what posts and when.
 
 ---
 
@@ -254,7 +254,7 @@ In this section you will set up your multi-platform posting service.
 
 1. Register at Blotato using the affiliate link provided (or blotato.com)
 
-NOTE: Blotato handles the actual posting to all 9 social platforms through one API.
+**NOTE:** Blotato handles the actual posting to all 9 social platforms through one API.
 
 ---
 
@@ -266,7 +266,7 @@ In this section you will authorize Blotato to post on your behalf.
 
 ![blotato_connected](assets/blotato_connected.png)
 
-NOTE: Later in Section 3, you'll need to activate/deactivate nodes based on which platforms you connected here.
+**NOTE:** Later in Section 3, you'll need to activate/deactivate nodes based on which platforms you connected here.
 
 ---
 
@@ -278,7 +278,7 @@ In this section you will get your authentication credential for n8n to communica
 
 ![blotato_api_key](assets/blotato_api_key.png)
 
-NOTE: This API key allows n8n to send your content to Blotato for posting.
+**NOTE:** This API key allows n8n to send your content to Blotato for posting.
 
 ---
 
@@ -306,7 +306,7 @@ You'll see the workflow canvas with multiple connected nodes:
 - Blotato nodes: Post to each platform (9 separate nodes)
 - Update Sheet: Marks Status as "Posted" and records timestamps
 
-NOTE: Understanding the flow helps you troubleshoot issues and customize later.
+**NOTE:** Understanding the flow helps you troubleshoot issues and customize later.
 
 ---
 
@@ -351,7 +351,7 @@ This is the most technical step. n8n's documentation provides current, detailed 
 
 ![deactivate_node](assets/deactivate_node.png)
 
-NOTE: Credentials allow n8n to access your services. Deactivating unused platforms prevents errors.
+**NOTE:** Credentials allow n8n to access your services. Deactivating unused platforms prevents errors.
 
 ---
 
@@ -402,7 +402,7 @@ In Blotato Calendar, locate your scheduled test post and either delete it or let
 
 4. Change another row's Status to "Ready To Post" → Run the n8n workflow again → Repeat until confident
 
-NOTE: Manual testing verifies all components work together before you rely on automation.
+**NOTE:** Manual testing verifies all components work together before you rely on automation.
 
 ---
 
