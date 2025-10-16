@@ -75,19 +75,19 @@ In this section you will set up your Google Drive folder structure, import the t
 
 3. Share MyContent folder via right-click → Select Share → Anyone with the link (Viewer permissions is ok)
 
-![share_folder](assets/share_folder_brdr.gif)
+   ![share_folder](assets/share_folder_brdr.gif)
 
 4. Inside `MyContent`, create two subfolders:
    - `Process`
    - `Motivation`
 
-Your folder structure should look like:
-```
-Google Drive
-└── MyContent
-    ├── Process
-    └── Motivation
-```
+   Your folder structure should look like:
+   ```
+   Google Drive
+   └── MyContent
+       ├── Process
+       └── Motivation
+   ```
 
 **Copy the Google Sheet Template:**
 
@@ -97,7 +97,7 @@ Google Drive
 
 7. Rename to exactly: `Social_Media_Publisher_PRO_V2.4`
 
-**NOTE:** While you can use any filename, using this exact name simplifies setup since it matches the workflow documentation.
+   **NOTE:** While you can use any filename, using this exact name simplifies setup since it matches the workflow documentation.
 
 8. Move the spreadsheet file INTO the `MyContent` folder
 
@@ -107,18 +107,18 @@ Google Drive
    - 10 files into the `Process` folder
    - 10 files into the `Motivation` folder
 
-Your final structure:
-```
-Google Drive
-└── MyContent
-    ├── Social_Media_Publisher_PRO_V2.4 (Google Sheet)
-    ├── Process (10 video files)
-    └── Motivation (10 video files)
-```
+   Your final structure:
+   ```
+   Google Drive
+   └── MyContent
+       ├── Social_Media_Publisher_PRO_V2.4 (Google Sheet)
+       ├── Process (10 video files)
+       └── Motivation (10 video files)
+   ```
 
-![folder_structure](assets/folder_structure.png)
+   ![folder_structure](assets/folder_structure.png)
 
-**NOTE:** The Apps Script scans from the spreadsheet's location. Both the sheet and content folders must be inside `MyContent`.
+   **NOTE:** The Apps Script scans from the spreadsheet's location. Both the sheet and content folders must be inside `MyContent`.
 
 ---
 
@@ -126,39 +126,39 @@ Google Drive
 
 1. Open the Google Sheet you just placed in `MyContent` folder
 
-You'll see 3 tabs at the bottom: Settings, ContentData, Metadata
+   You'll see 3 tabs at the bottom: Settings, ContentData, Metadata
 
-**Settings Tab:**
-- Open this tab
-- Read the note about accepted file formats (standard video: .mp4, .mov, .avi; images: .png, .jpg, .jpeg, .gif)
-- See the "Update ContentData" button - you'll use this later
-- See the "Enable Autotrigger" dropdown - leave as "No" for now
+   **Settings Tab:**
+   - Open this tab
+   - Read the note about accepted file formats (standard video: .mp4, .mov, .avi; images: .png, .jpg, .jpeg, .gif)
+   - See the "Update ContentData" button - you'll use this later
+   - See the "Enable Autotrigger" dropdown - leave as "No" for now
 
-![settings_tab](assets/settings_tab.png)
+   ![settings_tab](assets/settings_tab.png)
 
-**ContentData Tab:**
-- Open this tab
-- Review the column headers:
-  - Filename, Media URL, Content Category, Title, Caption, Status
-  - Platform columns (instagram, facebook, tiktok, pinterest, youtube, threads, twitter, linkedin, bluesky)
-- This tab is currently empty - it will fill automatically when you run the Apps Script
+   **ContentData Tab:**
+   - Open this tab
+   - Review the column headers:
+     - Filename, Media URL, Content Category, Title, Caption, Status
+     - Platform columns (instagram, facebook, tiktok, pinterest, youtube, threads, twitter, linkedin, bluesky)
+   - This tab is currently empty - it will fill automatically when you run the Apps Script
 
-![contentdata_tab](assets/contentdata_tab.png)
+   ![contentdata_tab](assets/contentdata_tab.png)
 
-**Metadata Tab:**
-- Open this tab
-- See 2 pre-populated rows corresponding to your 2 test folders (Process, Motivation)
-- Column structure:
-  - Category Folder Name: Must match Google Drive subfolder name exactly
-  - Business Context: Full description of audience and positioning
-  - Default Title: Template used for new content
-  - Default Caption: Template used for new content
+   **Metadata Tab:**
+   - Open this tab
+   - See 2 pre-populated rows corresponding to your 2 test folders (Process, Motivation)
+   - Column structure:
+     - Category Folder Name: Must match Google Drive subfolder name exactly
+     - Business Context: Full description of audience and positioning
+     - Default Title: Template used for new content
+     - Default Caption: Template used for new content
 
-![metadata_tab](assets/metadata_tab.png)
+   ![metadata_tab](assets/metadata_tab.png)
 
-The Metadata tab contains detailed Business Context examples for both Process and Motivation folders. Review these examples to understand the level of detail needed for the AI Agent to generate relevant content.
+   The Metadata tab contains detailed Business Context examples for both Process and Motivation folders. Review these examples to understand the level of detail needed for the AI Agent to generate relevant content.
 
-**NOTE:** Business Context is what allows the AI Agent to generate relevant titles, captions, and hashtags that match your brand voice and audience.
+   **NOTE:** Business Context is what allows the AI Agent to generate relevant titles, captions, and hashtags that match your brand voice and audience.
 
 ---
 
@@ -168,77 +168,77 @@ The Metadata tab contains detailed Business Context examples for both Process an
 
 1. In the Settings tab, click the "Update ContentData" button
 
-**Authorization Process (First Time Only - Required by Google)**
+   **Authorization Process (First Time Only - Required by Google)**
 
-When you click Update ContentData for the first time, Google will show you several security screens. This is normal and required for ANY Apps Script that accesses your Drive and Sheets files, even your own personal scripts. Here's what you'll see and what to do:
+   When you click Update ContentData for the first time, Google will show you several security screens. This is normal and required for ANY Apps Script that accesses your Drive and Sheets files, even your own personal scripts. Here's what you'll see and what to do:
 
-**Screen 1: Authorization Required**
+   **Screen 1: Authorization Required**
 
-3. Click "Review Permissions"
+2. Click "Review Permissions"
 
-![auth_required](assets/auth_required.png)
+   ![auth_required](assets/auth_required.png)
 
-**Screen 2: Choose Account**
+   **Screen 2: Choose Account**
 
-4. Select your Google account (the one you're using for this setup)
+3. Select your Google account (the one you're using for this setup)
 
-![account_selection](assets/account_selection.png)
+   ![account_selection](assets/account_selection.png)
 
-**Screen 3: Unverified App Warning**
+   **Screen 3: Unverified App Warning**
 
-5. Click "Advanced" 
+4. Click "Advanced" 
 
-![unverified_app](assets/unverified_app-advanced.png)
+   ![unverified_app](assets/unverified_app-advanced.png)
 
-6. Click "Go to [script name] (unsafe)"
+5. Click "Go to [script name] (unsafe)"
 
-![unverified_app](assets/unverified_app-goto.png)
+   ![unverified_app](assets/unverified_app-goto.png)
 
-**NOTE:** The word "unsafe" is misleading. This is YOUR script accessing YOUR files. Google shows this warning because they haven't reviewed your personal script - but it's completely safe since you created it.
+   **NOTE:** The word "unsafe" is misleading. This is YOUR script accessing YOUR files. Google shows this warning because they haven't reviewed your personal script - but it's completely safe since you created it.
 
-Security concerns? A copy of the Apps Script code is provided in your download package. You can copy and paste the code into ChatGPT or any AI tool and ask it to analyze for security risks.
+   Security concerns? A copy of the Apps Script code is provided in your download package. You can copy and paste the code into ChatGPT or any AI tool and ask it to analyze for security risks.
 
-**Screen 4: Grant Permissions**
+   **Screen 4: Grant Permissions**
 
-7. Review the permissions list (See and download all your Google Drive files, View and manage spreadsheets) and click `Select All` Checkbox
+6. Review the permissions list (See and download all your Google Drive files, View and manage spreadsheets) and click `Select All` Checkbox
 
-![grant_permissions](assets/grant_permissions01.png)
+   ![grant_permissions](assets/grant_permissions01.png)
 
-8. Click "Continue"
+7. Click "Continue"
 
-![grant_permissions](assets/grant_permissions02.png)
+   ![grant_permissions](assets/grant_permissions02.png)
 
-**After authorization:**
+   **After authorization:**
 
-The script will run (may take 30-60 seconds for 20 files). Watch `cell B3 in Settings tab` for status message. When complete, you'll see a summary: `20 New files added` (10 from each of 2 folders)
+   The script will run (may take 30-60 seconds for 20 files). Watch `cell B3 in Settings tab` for status message. When complete, you'll see a summary: `20 New files added` (10 from each of 2 folders)
 
-![script_complete](assets/script_complete.png)
+   ![script_complete](assets/script_complete.png)
 
-If you see an error on first run, this can happen occasionally. Simply click "Update ContentData" again. The second run should work.
+   If you see an error on first run, this can happen occasionally. Simply click "Update ContentData" again. The second run should work.
 
-**Verify the results:**
+   **Verify the results:**
 
-9. Switch to ContentData tab
+8. Switch to ContentData tab
 
-You should see 20 rows of data:
-- 10 rows with Content Category = "Process"
-- 10 rows with Content Category = "Motivation"
-- Each row has Filename, Media URL, default Title and Caption from Metadata tab
-- All rows show Status = "In Progress"
+   You should see 20 rows of data:
+   - 10 rows with Content Category = "Process"
+   - 10 rows with Content Category = "Motivation"
+   - Each row has Filename, Media URL, default Title and Caption from Metadata tab
+   - All rows show Status = "In Progress"
 
-![data_loaded](assets/data_loaded.png)
+   ![data_loaded](assets/data_loaded.png)
 
-**Prepare for posting:**
+   **Prepare for posting:**
 
-10. Pick ONE row to test with (any file from either folder)
+9. Pick ONE row to test with (any file from either folder)
 
-11. In the Status column, change status from "In Progress" to "Ready To Post"
+10. In the Status column, change status from "In Progress" to "Ready To Post"
 
-![status_dropdown](assets/status_dropdown.png)
+    ![status_dropdown](assets/status_dropdown.png)
 
-12. Leave all other rows as "In Progress"
+11. Leave all other rows as "In Progress"
 
-**NOTE:** Only rows marked "Ready To Post" will be processed by the n8n workflow. This gives you control over what posts and when.
+    **NOTE:** Only rows marked "Ready To Post" will be processed by the n8n workflow. This gives you control over what posts and when.
 
 ---
 
@@ -250,7 +250,7 @@ In this section you will register for Blotato, connect your social media account
 
 1. Register at Blotato using the affiliate link provided (or blotato.com)
 
-NOTE: Blotato handles the actual posting to all 9 social platforms through one API.
+   **NOTE:** Blotato handles the actual posting to all 9 social platforms through one API.
 
 ---
 
@@ -258,9 +258,9 @@ NOTE: Blotato handles the actual posting to all 9 social platforms through one A
 
 1. In Blotato, navigate to Connect Accounts and connect the platforms you want to use (Instagram, Facebook, TikTok, Pinterest, YouTube, Threads, Twitter, LinkedIn, Bluesky)
 
-![blotato_connected](assets/blotato_connected.png)
+   ![blotato_connected](assets/blotato_connected.png)
 
-NOTE: Later in Section 3, you'll need to activate/deactivate nodes based on which platforms you connected here.
+   **NOTE:** Later in Section 3, you'll need to activate/deactivate nodes based on which platforms you connected here.
 
 ---
 
@@ -268,9 +268,9 @@ NOTE: Later in Section 3, you'll need to activate/deactivate nodes based on whic
 
 1. In Blotato dashboard, go to Account Settings → API tab and copy your API key
 
-![blotato_api_key](assets/blotato_api_key.png)
+   ![blotato_api_key](assets/blotato_api_key.png)
 
-NOTE: This API key allows n8n to send your content to Blotato for posting.
+   **NOTE:** This API key allows n8n to send your content to Blotato for posting.
 
 ---
 
@@ -298,7 +298,7 @@ You'll see the workflow canvas with multiple connected nodes:
 - Blotato nodes: Post to each platform (9 separate nodes)
 - Update Sheet: Marks Status as "Posted" and records timestamps
 
-NOTE: Understanding the flow helps you troubleshoot issues and customize later.
+**NOTE:** Understanding the flow helps you troubleshoot issues and customize later.
 
 ---
 
@@ -341,7 +341,7 @@ This is the most technical step. n8n's documentation provides current, detailed 
 
 ![deactivate_node](assets/deactivate_node.png)
 
-NOTE: Credentials allow n8n to access your services. Deactivating unused platforms prevents errors.
+**NOTE:** Credentials allow n8n to access your services. Deactivating unused platforms prevents errors.
 
 ---
 
@@ -390,7 +390,7 @@ In Blotato Calendar, locate your scheduled test post and either delete it or let
 
 4. Change another row's Status to "Ready To Post" → Run the n8n workflow again → Repeat until confident
 
-NOTE: Manual testing verifies all components work together before you rely on automation.
+**NOTE:** Manual testing verifies all components work together before you rely on automation.
 
 ---
 
