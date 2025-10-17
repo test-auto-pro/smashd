@@ -76,6 +76,8 @@ In this section you will set up your Google Drive folder structure, import the t
 3. Share MyContent folder via right-click → Select Share → Anyone with the link (Viewer permissions is ok)
 
    ![share_folder](assets/share_folder_brdr.gif)
+   
+   `[SCREENSHOT: MyContent folder sharing settings]`
 
 4. Inside `MyContent`, create two subfolders:
    - `Process`
@@ -117,6 +119,8 @@ In this section you will set up your Google Drive folder structure, import the t
    ```
 
    ![folder_structure](assets/folder_structure.png)
+   
+   `[SCREENSHOT: Final MyContent folder structure with Google Sheet and test files]`
 
    **NOTE:** The Apps Script scans from the spreadsheet's location. Both the sheet and content folders must be inside `MyContent`.
 
@@ -135,6 +139,8 @@ In this section you will set up your Google Drive folder structure, import the t
    - See the "Enable Autotrigger" dropdown - leave as "No" for now
 
    ![settings_tab](assets/settings_tab.png)
+   
+   `[SCREENSHOT: Settings tab showing note, Update ContentData button, and autotrigger controls]`
 
    **ContentData Tab:**
    - Open this tab
@@ -144,6 +150,8 @@ In this section you will set up your Google Drive folder structure, import the t
    - This tab is currently empty - it will fill automatically when you run the Apps Script
 
    ![contentdata_tab](assets/contentdata_tab.png)
+   
+   `[SCREENSHOT: ContentData tab showing column headers with empty rows]`
 
    **Metadata Tab:**
    - Open this tab
@@ -155,6 +163,8 @@ In this section you will set up your Google Drive folder structure, import the t
      - Default Caption: Template used for new content
 
    ![metadata_tab](assets/metadata_tab.png)
+   
+   `[SCREENSHOT: Metadata tab showing 2 pre-populated example rows]`
 
    The Metadata tab contains detailed Business Context examples for both Process and Motivation folders. Review these examples to understand the level of detail needed for the AI Agent to generate relevant content.
 
@@ -177,22 +187,30 @@ In this section you will set up your Google Drive folder structure, import the t
 2. Click "Review Permissions"
 
    ![auth_required](assets/auth_required.png)
+   
+   `[SCREENSHOT: Authorization required dialog]`
 
    **Screen 2: Choose Account**
 
 3. Select your Google account (the one you're using for this setup)
 
    ![account_selection](assets/account_selection.png)
+   
+   `[SCREENSHOT: Account selection screen]`
 
    **Screen 3: Unverified App Warning**
 
 4. Click "Advanced" 
 
    ![unverified_app](assets/unverified_app-advanced.png)
+   
+   `[SCREENSHOT: Unverified app warning, click Advanced]`
 
 5. Click "Go to [script name] (unsafe)"
 
    ![unverified_app](assets/unverified_app-goto.png)
+   
+   `[SCREENSHOT: Unverified app warning, click Go To]`
 
    **NOTE:** The word "unsafe" is misleading. This is YOUR script accessing YOUR files. Google shows this warning because they haven't reviewed your personal script - but it's completely safe since you created it.
 
@@ -203,16 +221,22 @@ In this section you will set up your Google Drive folder structure, import the t
 6. Review the permissions list (See and download all your Google Drive files, View and manage spreadsheets) and click `Select All` Checkbox
 
    ![grant_permissions](assets/grant_permissions01.png)
+   
+   `[SCREENSHOT: Permission grant screen with Select All Checkbox]`
 
 7. Click "Continue"
 
    ![grant_permissions](assets/grant_permissions02.png)
+   
+   `[SCREENSHOT: Permission grant screen with Continue button]`
 
    **After authorization:**
 
    The script will run (may take 30-60 seconds for 20 files). Watch `cell B3 in Settings tab` for status message. When complete, you'll see a summary: `20 New files added` (10 from each of 2 folders)
 
    ![script_complete](assets/script_complete.png)
+   
+   `[SCREENSHOT: Settings tab showing completion message]`
 
    If you see an error on first run, this can happen occasionally. Simply click "Update ContentData" again. The second run should work.
 
@@ -227,6 +251,8 @@ In this section you will set up your Google Drive folder structure, import the t
    - All rows show Status = "In Progress"
 
    ![data_loaded](assets/data_loaded.png)
+   
+   `[SCREENSHOT: ContentData tab with 20 populated rows]`
 
    **Prepare for posting:**
 
@@ -235,6 +261,8 @@ In this section you will set up your Google Drive folder structure, import the t
 10. In the Status column, change status from "In Progress" to "Ready To Post"
 
     ![status_dropdown](assets/status_dropdown.png)
+    
+    `[SCREENSHOT: Status dropdown showing options: In Progress, Ready To Post, Posted]`
 
 11. Leave all other rows as "In Progress"
 
@@ -259,6 +287,8 @@ In this section you will register for Blotato, connect your social media account
 1. In Blotato, navigate to Connect Accounts and connect the platforms you want to use (Instagram, Facebook, TikTok, Pinterest, YouTube, Threads, Twitter, LinkedIn, Bluesky)
 
    ![blotato_connected](assets/blotato_connected.png)
+   
+   `[SCREENSHOT: Blotato dashboard showing connected social accounts]`
 
    **NOTE:** Later in Section 3, you'll need to activate/deactivate nodes based on which platforms you connected here.
 
@@ -269,6 +299,8 @@ In this section you will register for Blotato, connect your social media account
 1. In Blotato dashboard, go to Account Settings → API tab and copy your API key
 
    ![blotato_api_key](assets/blotato_api_key.png)
+   
+   `[SCREENSHOT: Blotato settings page showing API key location]`
 
    **NOTE:** This API key allows n8n to send your content to Blotato for posting.
 
@@ -282,23 +314,27 @@ In this section you will import the pre-built workflow, configure credentials fo
 
 1. In n8n, click "Add Workflow" → "Import from File" and select the `workflow.json` file from your download package
 
-![n8n_import](assets/n8n_import.png)
+   ![n8n_import](assets/n8n_import.png)
+   
+   `[SCREENSHOT: n8n import dialog]`
 
-You'll see the workflow canvas with multiple connected nodes:
-- Google Drive trigger
-- Google Sheets nodes
-- AI Agent node with OpenAI
-- Multiple Blotato posting nodes (one per platform)
+   You'll see the workflow canvas with multiple connected nodes:
+   - Google Drive trigger
+   - Google Sheets nodes
+   - AI Agent node with OpenAI
+   - Multiple Blotato posting nodes (one per platform)
 
-![workflow_overview](assets/workflow_overview.png)
+   ![workflow_overview](assets/workflow_overview.png)
+   
+   `[SCREENSHOT: n8n workflow overview showing all nodes]`
 
-**Review the workflow structure:**
-- Trigger: Checks Google Sheets for rows with Status = "Ready To Post"
-- AI Agent: Generates platform-specific titles, captions, hashtags
-- Blotato nodes: Post to each platform (9 separate nodes)
-- Update Sheet: Marks Status as "Posted" and records timestamps
+   **Review the workflow structure:**
+   - Trigger: Checks Google Sheets for rows with Status = "Ready To Post"
+   - AI Agent: Generates platform-specific titles, captions, hashtags
+   - Blotato nodes: Post to each platform (9 separate nodes)
+   - Update Sheet: Marks Status as "Posted" and records timestamps
 
-**NOTE:** Understanding the flow helps you troubleshoot issues and customize later.
+   **NOTE:** Understanding the flow helps you troubleshoot issues and customize later.
 
 ---
 
@@ -357,40 +393,46 @@ This is the most technical step. n8n's documentation provides current, detailed 
 
 1. In n8n workflow canvas, click "Execute Workflow" button at the bottom
 
-Watch the nodes light up as they process. Execution should take 30-60 seconds.
+   Watch the nodes light up as they process. Execution should take 30-60 seconds.
 
-![workflow_executing](assets/workflow_executing.png)
+   ![workflow_executing](assets/workflow_executing.png)
+   
+   `[SCREENSHOT: n8n workflow executing with nodes lighting up]`
 
-**Success indicators:**
+   **Success indicators:**
 
-**In n8n:**
-- All active nodes show green checkmarks
-- No red error indicators
-- Output data visible in each node
+   **In n8n:**
+   - All active nodes show green checkmarks
+   - No red error indicators
+   - Output data visible in each node
 
-**In Blotato:**
+   **In Blotato:**
 
 2. In Blotato Calendar, you should see your test post scheduled for 7 days from now (intentionally scheduled in the future for safe testing)
 
-![blotato_scheduled](assets/blotato_scheduled.png)
+   ![blotato_scheduled](assets/blotato_scheduled.png)
+   
+   `[SCREENSHOT: Blotato dashboard showing scheduled post]`
 
-**In Google Sheets:**
+   **In Google Sheets:**
 
 3. In ContentData tab, find the row you marked "Ready To Post" and verify:
-- Status changed to "Posted"
-- Each connected platform column shows date/time stamp, platform-specific title, caption, and hashtags
+   - Status changed to "Posted"
+   - Each connected platform column shows date/time stamp, platform-specific title, caption, and hashtags
 
-![sheet_updated](assets/sheet_updated.png)
+   ![sheet_updated](assets/sheet_updated.png)
+   
+   `[SCREENSHOT: ContentData tab showing updated row with timestamps and captions]`
 
-If you see all these success indicators: Congratulations! Your system is working.
+   If you see all these success indicators: Congratulations! Your system is working.
 
-In Blotato Calendar, locate your scheduled test post and either delete it or let it publish in 7 days.
+   In Blotato Calendar, locate your scheduled test post and either delete it or let it publish in 7 days.
 
-**Test with more content:**
+   **Test with more content:**
 
 4. Change another row's Status to "Ready To Post" → Run the n8n workflow again → Repeat until confident
 
-**NOTE:** Manual testing verifies all components work together before you rely on automation.
+   **NOTE:** Manual testing verifies all components work together before you rely on automation.
 
 ---
 
