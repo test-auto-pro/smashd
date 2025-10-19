@@ -308,11 +308,25 @@ In this section you will register for Blotato, connect your social media account
 
 ## Section 3: n8n Setup
 
-In this section you will import the pre-built workflow, configure credentials for all services, and run your first test.
+In this section you will register for n8n, install the Blotato community node, import the pre-built workflow template, configure credentials for all services, and run your first test.
 
-### Step 1: Import Workflow and Review Instructions
+### Step 1: Register for n8n and Install Blotato Community Node
 
-1. In n8n, click "Add Workflow" → "Import from File" and select the `workflow.json` file from your download package
+1. Register for n8n (start with 14-day trial at n8n.io or install free local instance - see Glossary for options)
+
+2. Navigate to your n8n workspace
+
+3. Go to Settings → Community Nodes
+
+4. Install the Blotato community node
+
+   ![n8n_import](assets/blotato_community_node.png)
+   
+   `[SCREENSHOT: Blotato community node]`
+
+### Step 2: Import Workflow Template
+
+1. In n8n, click "Add Workflow" → "Import from File" and select the `n8n_template_POST_to_9PLATFORM_PRO.json` file from your download package
 
    ![n8n_import](assets/n8n_import.png)
    
@@ -338,7 +352,7 @@ In this section you will import the pre-built workflow, configure credentials fo
 
 ---
 
-### Step 2: Configure Credentials and Connections
+### Step 3: Configure Credentials and Connections
 
 This is the most technical step. Take your time.
 
@@ -381,7 +395,7 @@ This is the most technical step. n8n's documentation provides current, detailed 
 
 ---
 
-### Step 3: Show Time - First Test Run
+### Step 4: Show Time - First Test Run
 
 **Pre-flight check:** ✈️
 - ✓ Google Sheet has 20 rows in ContentData
