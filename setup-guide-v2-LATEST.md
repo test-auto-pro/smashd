@@ -362,7 +362,7 @@ This is the most technical step. Take your time.
 
 1. In n8n, open any Google Drive or Google Sheets node and create new credential
 
-2. Follow n8n's official documentation for Google OAuth setup: [n8n Google OAuth documentation link]
+2. Locate n8n **Google OAuth Generic** documentation and follow the instructions
 
 This is the most technical step. n8n's documentation provides current, detailed instructions that account for any Google Cloud Console interface changes.
 
@@ -411,20 +411,21 @@ This is the most technical step. n8n's documentation provides current, detailed 
 
    Watch the nodes light up as they process. Execution should take 30-60 seconds.
 
-   ![workflow_executing](assets/workflow_executing.png)
-   
-   `[SCREENSHOT: n8n workflow executing with nodes lighting up]`
-
    **Success indicators:**
 
    **In n8n:**
    - All active nodes show green checkmarks
    - No red error indicators
    - Output data visible in each node
+  
+   ![workflow_executing](assets/workflow_executed_successfully.png)
+   
+   `[SCREENSHOT: n8n workflow executed successfully]`
+   
 
    **In Blotato:**
 
-2. In Blotato Calendar, you should see your test post scheduled for 7 days from now (intentionally scheduled in the future for safe testing)
+3. In Blotato Calendar, you should see your test post scheduled for 7 days from now (intentionally scheduled in the future for safe testing)
 
    ![blotato_scheduled](assets/blotato_scheduled.png)
    
@@ -432,7 +433,7 @@ This is the most technical step. n8n's documentation provides current, detailed 
 
    **In Google Sheets:**
 
-3. In ContentData tab, find the row you marked "Ready To Post" and verify:
+4. In ContentData tab, find the row you marked "Ready To Post" and verify:
    - Status changed to "Posted"
    - Each connected platform column shows date/time stamp, platform-specific title, caption, and hashtags
 
@@ -446,7 +447,7 @@ This is the most technical step. n8n's documentation provides current, detailed 
 
    **Test with more content:**
 
-4. Change another row's Status to "Ready To Post" → Run the n8n workflow again → Repeat until confident
+5. Change another row's Status to "Ready To Post" → Run the n8n workflow again → Repeat until confident
 
    **NOTE:** Manual testing verifies all components work together before you rely on automation.
 
