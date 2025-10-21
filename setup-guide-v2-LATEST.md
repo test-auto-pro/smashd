@@ -33,6 +33,8 @@ Sharing your message on social media is important, but it shouldn't take up all 
 
 ![system_diagram](assets/system_diagram.png)
 
+`[IMAGE: System Diagram]`
+
 ---
 
 ## Introduction
