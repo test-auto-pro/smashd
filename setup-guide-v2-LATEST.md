@@ -378,6 +378,10 @@ This is the most technical step. n8n's documentation provides current, detailed 
 
 ![openai_credential](assets/openai_credential.png)
 
+![openai_credential](assets/openai_credential02.png)
+
+`[SCREENSHOT: n8n workflow Open AI credentials]`
+
 **Blotato API:**
 
 8. Open each of the 9 Blotato social platform nodes (Instagram, Facebook, TikTok, Pinterest, YouTube, Threads, Twitter, LinkedIn, Bluesky)
@@ -391,7 +395,13 @@ This is the most technical step. n8n's documentation provides current, detailed 
 
 ![blotato_credential](assets/blotato_credential.png)
 
+![blotato_credential](assets/blotato_credential02.png)
+
+`[SCREENSHOT: n8n workflow Blotato credentials]`
+
 ![deactivate_node](assets/deactivate_node.png)
+
+`[SCREENSHOT: n8n workflow Deactivate Bloato Node]`
 
 **NOTE:** Credentials allow n8n to access your services. Deactivating unused platforms prevents errors.
 
